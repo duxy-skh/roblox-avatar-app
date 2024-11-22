@@ -12,11 +12,12 @@ def index():
 
 @app.route('/avatar/<username>')
 def avatar(username):
-    api_url = f"https://users.roblox.com/v1/users/search?keyword={username}&limit=1"
+    api_url = f"https://api.roblox.com/users/get-by-username?username={username}"
     response = requests.get(api_url).json()
 
-    if "data" in response and response["data"]:
-        user_id = response["data"][0]["id"]
+    # Check if user exists
+    if response and "Id" in response:
+        user_id = response["Id"]
         avatar_url = f"https://www.roblox.com/headshot-thumbnail/image?userId={user_id}&width=420&height=420&format=png"
     else:
         avatar_url = None
