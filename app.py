@@ -12,16 +12,21 @@ def index():
 
 @app.route('/avatar/<username>')
 def avatar(username):
+    # Use the Roblox API to get user data by username
     api_url = f"https://api.roblox.com/users/get-by-username?username={username}"
-    response = requests.get(api_url).json()
+    response = requests.get(api_url)
 
-    # Check if user exists
-    if response and "Id" in response:
-        user_id = response["Id"]
-        avatar_url = f"https://www.roblox.com/headshot-thumbnail/image?userId={user_id}&width=420&height=420&format=png"
-    else:
-        avatar_url = None
+    # Default to no avatar URL
+    avatar_url = None
 
+    if response.status_code == 200:
+        data = response.json()
+        # Check if the user exists and extract their ID
+        if "Id" in data and data["Id"] is not None:
+            user_id = data["Id"]
+            # Generate the Roblox avatar URL
+            avatar_url = f"https://www.roblox.com/headshot-thumbnail/image?userId={user_id}&width=420&height=420&format=png"
+    
     return render_template('avatar.html', username=username, avatar_url=avatar_url)
 
 if __name__ == '__main__':
