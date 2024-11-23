@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox Avatar</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <nav>
+        <div class="logo">
+            <img src="/static/images/robuxlogo.png" alt="Roblox Logo">
+            <span>ROBLOX</span>
+        </div>
+        <ul>
+            <li><a href="https://www.roblox.com/discover#/" target="_blank">Discover</a></li>
+            <li><a href="https://www.roblox.com/catalog" target="_blank">Marketplace</a></li>
+            <li><a href="https://www.roblox.com/upgrades/robux" target="_blank">Robux</a></li>
+        </ul>
+    </nav>
     <div class="container">
         <h1>Avatar for {{ username }}</h1>
-        {% if error %}
-            <p>{{ error }}</p>
-        {% elif avatar_url %}
-            <img src="{{ avatar_url }}" alt="Roblox Avatar" style="width:200px; height:200px; border-radius:50%;">
+        {% if avatar_url %}
+            <div class="thumbnail-container">
+                <img src="{{ avatar_url }}" alt="Roblox Avatar">
+            </div>
         {% else %}
-            <p>Avatar not found. Please try again.</p>
+            <p>User not found. Please try again.</p>
         {% endif %}
-        <a href="/">Search Again</a>
+        <a href="/" class="button">Search Again</a>
     </div>
 </body>
 </html>
