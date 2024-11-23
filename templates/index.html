@@ -49,19 +49,19 @@
             <div class="selection">
                 <div class="row">
                     <span>$0.00</span>
-                    <button class="robux-button">800</button>
+                    <button class="robux-button" data-amount="800">800</button>
                 </div>
                 <div class="row">
                     <span>$0.00</span>
-                    <button class="robux-button">1700</button>
+                    <button class="robux-button" data-amount="1700">1700</button>
                 </div>
                 <div class="row">
                     <span>$0.00</span>
-                    <button class="robux-button">5500</button>
+                    <button class="robux-button" data-amount="5500">5500</button>
                 </div>
                 <div class="row">
                     <span>$0.00</span>
-                    <button class="robux-button">10000</button>
+                    <button class="robux-button" data-amount="10000">10000</button>
                 </div>
             </div>
         </div>
@@ -71,7 +71,12 @@
         <div id="avatar-container">
             <img src="/static/images/avatar-placeholder.png" alt="Roblox Avatar">
         </div>
-        <button id="back-button">Search Again</button>
+
+        <!-- Buttons -->
+        <div id="button-container">
+            <button id="next-button" style="display: none;">Next</button>
+            <button id="back-button">Search Again</button>
+        </div>
     </div>
 
     <!-- Footer -->
