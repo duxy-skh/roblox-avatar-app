@@ -131,7 +131,7 @@ nav ul li a:hover {
 }
 
 #input-section button {
-    background-color: #007bff;
+    background-color: #00AF6E;
     color: #FFFFFF;
     border: none;
     padding: 10px 20px;
@@ -142,7 +142,7 @@ nav ul li a:hover {
 }
 
 #input-section button:hover {
-    background-color: #0056b3;
+    background-color: #008F5C;
 }
 
 /* Loading Animation */
@@ -154,7 +154,7 @@ nav ul li a:hover {
 
 .loader {
     border: 8px solid #DEE1E3;
-    border-top: 8px solid #007bff;
+    border-top: 8px solid #00AF6E;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -188,11 +188,27 @@ nav ul li a:hover {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid #007bff;
+    border: 3px solid #00AF6E;
     margin-bottom: 10px;
 }
 
 #avatar-container p {
+    color: red;
+    font-weight: bold;
+}
+
+/* Error Section */
+#error-message {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+}
+
+#error-message p.error {
     color: red;
     font-weight: bold;
 }
@@ -206,13 +222,6 @@ nav ul li a:hover {
     border-radius: 8px;
     max-width: 600px;
     text-align: center;
-    width: 100%;
-}
-
-#selection-section h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
 }
 
 .selection .row {
@@ -236,18 +245,35 @@ nav ul li a:hover {
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
-.robux-button:hover {
-    background-color: #007bff;
-    color: #FFFFFF;
-}
-
+.robux-button:hover,
 .robux-button.active {
-    background-color: #007bff;
+    background-color: #00AF6E;
     color: #FFFFFF;
-    border-color: #0056b3;
+}
+
+/* Button Container */
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #00AF6E;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #008F5C;
 }
 
 /* Footer */
