@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox Avatar</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <div class="container">
         <h1>Avatar for {{ username }}</h1>
-        {% if avatar_url %}
-            <img src="{{ avatar_url }}" alt="Roblox Avatar">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% elif avatar_url %}
+            <img src="{{ avatar_url }}" alt="Roblox Avatar" style="width:200px; height:200px; border-radius:50%;">
         {% else %}
-            <p>User not found. Please try again.</p>
+            <p>Avatar not found. Please try again.</p>
         {% endif %}
         <a href="/">Search Again</a>
     </div>
