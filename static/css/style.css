@@ -1,145 +1,126 @@
-/* Base styles */
+/* General Styles */
 body {
-    font-family: "Kumbh Sans", sans-serif;
+    font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f4f5;
-    color: #393b3d;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
-/* Header (nav) */
+/* Navigation Bar */
 nav {
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: #dee1e3;
-    border-bottom: 1px solid #c7cbce;
-    padding: 10px 40px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.logo {
+nav .logo {
     display: flex;
     align-items: center;
 }
 
-.logo img {
+nav .logo img {
     height: 40px;
     margin-right: 10px;
 }
 
-.logo span {
-    font-weight: 900;
-    font-size: 22px;
+nav .logo span {
+    font-size: 20px;
+    font-weight: bold;
     color: #393b3d;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-}
-
-nav ul li {
+    gap: 15px;
     margin: 0;
+    padding: 0;
 }
 
-nav ul a {
+nav ul li a {
     text-decoration: none;
-    color: #393b3d;
     font-weight: 600;
     font-size: 14px;
-    transition: color 0.3s ease;
+    color: #393b3d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul a:hover {
-    color: #008f57;
+nav ul li a:hover {
+    background-color: #007bff;
+    color: #ffffff;
 }
 
-/* Middle section */
-.middle {
+/* Main Content Section */
+.main-content {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #ffffff;
-    border: 1px solid #c7cbce;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
+    padding: 50px 20px;
 }
 
-.middle h2 {
-    font-size: 28px;
-    font-weight: 700;
+.main-content h2 {
+    font-size: 24px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.middle p {
+.main-content p {
     font-size: 16px;
-    color: #606162;
+    color: #666;
+    margin-bottom: 30px;
 }
 
-/* Form container */
-.box_con {
-    background-color: #fff;
-    max-width: 600px;
-    margin: 0 auto 30px;
+/* Form Section */
+#input-section {
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #c7cbce;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    max-width: 400px;
 }
 
-input {
+#input-section input {
     width: calc(100% - 20px);
     padding: 10px;
-    border: 1px solid #c7cbce;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-button {
-    background-color: #393b3d;
-    color: #fff;
+#input-section button {
+    background-color: #007bff;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
     font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #008f57;
+#input-section button:hover {
+    background-color: #0056b3;
 }
 
-/* Avatar image */
-.thumbnail-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #393b3d;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-    display: block;
-    margin: 20px auto;
-}
-
-/* Footer */
-footer {
+/* Loading Animation */
+#loading-section {
+    display: none;
     text-align: center;
-    padding: 20px 0;
-    background-color: #dee1e3;
-    border-top: 1px solid #c7cbce;
+    margin-top: 20px;
 }
 
-footer .para {
-    font-size: 12px;
-    color: #606162;
-}
-
-/* Loading animation */
 .loader {
     border: 8px solid #f3f3f3; /* Light gray */
-    border-top: 8px solid #393b3d; /* Dark gray */
+    border-top: 8px solid #007bff; /* Blue */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -156,10 +137,52 @@ footer .para {
     }
 }
 
-/* Hide sections by default */
-#avatar-section,
-#loading-section {
+/* Avatar Section */
+#avatar-section {
+    display: none;
     text-align: center;
     margin-top: 20px;
 }
 
+#avatar-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
+}
+
+#avatar-container p {
+    color: red;
+    font-weight: bold;
+}
+
+#avatar-section button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#avatar-section button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+footer .para {
+    font-size: 14px;
+    color: #666;
+}
