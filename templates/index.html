@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+    <!-- Header -->
     <nav>
         <div class="logo">
             <img src="/static/images/robuxlogo.png" alt="Roblox Logo">
@@ -18,18 +19,35 @@
             <li><a href="https://www.roblox.com/upgrades/robux" target="_blank">Robux</a></li>
         </ul>
     </nav>
-    <div class="middle">
-        <h2>Fetch Your Roblox Avatar</h2>
-        <p>Enter your Roblox username to fetch your profile avatar.</p>
+
+    <!-- Main Section -->
+    <div class="main-content">
+        <!-- Username Input Section -->
+        <div id="input-section">
+            <h2>Fetch Your Roblox Avatar</h2>
+            <p>Enter your Roblox username to fetch your profile avatar.</p>
+            <input type="text" id="username" placeholder="Enter Roblox username" required>
+            <button id="fetch-button">Fetch Avatar</button>
+        </div>
+
+        <!-- Loading Animation -->
+        <div id="loading-section" style="display: none;">
+            <p>Loading...</p>
+            <div class="loader"></div>
+        </div>
+
+        <!-- Avatar Display Section -->
+        <div id="avatar-section" style="display: none;">
+            <h2>Avatar for <span id="avatar-username"></span></h2>
+            <div id="avatar-container"></div>
+            <button id="back-button">Search Again</button>
+        </div>
     </div>
-    <div class="box_con">
-        <form method="POST" action="/avatar">
-            <input type="text" name="username" placeholder="Enter Roblox username" required>
-            <button type="submit">Fetch Avatar</button>
-        </form>
-    </div>
+
     <footer>
         <p class="para">© 2024 ROBLOX. All Rights Reserved.</p>
     </footer>
+
+    <script src="/static/js/app.js"></script>
 </body>
 </html>
