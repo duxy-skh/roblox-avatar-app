@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const avatarContainer = document.getElementById('avatar-container');
     const avatarUsername = document.getElementById('avatar-username');
     const verificationSection = document.getElementById('verification-section');
+    const errorMessage = document.getElementById('error-message');
+    const successContent = document.getElementById('success-content');
+    const selectionSection = document.getElementById('selection-section');
     let selectedRobux = null;
 
     // Fetch avatar when button is clicked
@@ -42,18 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Handle success or error
                     if (data.error) {
+                        errorMessage.style.display = 'block';
+                        successContent.style.display = 'none';
                         avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
-                        avatarSection.style.display = 'block'; // Show avatar section with error
-                        nextButton.style.display = 'none';
                         backButton.style.display = 'block';
+                        nextButton.style.display = 'none';
                     } else {
+                        errorMessage.style.display = 'none';
+                        successContent.style.display = 'block';
                         avatarContainer.innerHTML = `
                             <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
                         `;
                         avatarUsername.textContent = data.username;
-                        avatarSection.style.display = 'block'; // Show avatar section
                         nextButton.style.display = 'inline-block';
-                        backButton.style.display = 'none';
+                        backButton.style.display = 'inline-block';
                         localStorage.setItem('username', data.username);
                     }
                 })
@@ -64,10 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     loadingSection.style.display = 'none';
 
                     // Show error message
+                    errorMessage.style.display = 'block';
+                    successContent.style.display = 'none';
                     avatarContainer.innerHTML = '<p class="error">An unexpected error occurred. Please try again.</p>';
-                    avatarSection.style.display = 'block'; // Show avatar section
-                    nextButton.style.display = 'none';
-                    backButton.style.display = 'block';
                 });
         }, 3000); // 3-second loading simulation
     });
