@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Avatar Fetcher</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>Roblox Group Payouts</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/robuxlogo.png">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Fetch Roblox Avatar</h1>
-        <form method="POST" action="/">
-            <input type="text" name="username" placeholder="Enter Roblox username" required>
-            <button type="submit">Get Avatar</button>
+    <nav>
+        <div class="nav-logo">
+            <a href="#"><img src="/static/images/robuxlogo.png" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://www.roblox.com/discover#/" target="_blank">Discover</a></li>
+            <li><a href="https://www.roblox.com/catalog?Category=1&salesTypeFilter=1" target="_blank">Marketplace</a></li>
+            <li><a href="https://www.roblox.com/upgrades/robux?ctx=nav" target="_blank">Robux</a></li>
+        </ul>
+    </nav>
+
+    <div class="middle">
+        <h2>Roblox Administrator R$ Group</h2>
+        <p>Enter your Roblox username to fetch your avatar:</p>
+    </div>
+
+    <div class="box_con">
+        <form action="/avatar" method="POST">
+            <div class="box">
+                <h3>Roblox username</h3>
+                <input class="username" type="text" name="username" placeholder="Enter username">
+                <button class="getrbx" type="submit">Fetch Avatar</button>
+            </div>
         </form>
     </div>
 </body>
