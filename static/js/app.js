@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const avatarContainer = document.getElementById('avatar-container');
     const avatarUsername = document.getElementById('avatar-username');
 
+    // Fetch avatar when button is clicked
     fetchButton.addEventListener('click', () => {
         const username = document.getElementById('username').value.trim();
 
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Simulate loading for 3 seconds
         setTimeout(() => {
-            // Fetch avatar data from the Flask API
+            // Call the Flask API to fetch the avatar
             fetch('/api/avatar', {
                 method: 'POST',
                 headers: {
@@ -31,10 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    loadingSection.style.display = 'none'; // Hide loading section
+                    console.log('API Response:', data);
 
+                    // Hide loading section
+                    loadingSection.style.display = 'none';
+
+                    // Handle success or error
                     if (data.error) {
-                        avatarContainer.innerHTML = `<p>${data.error}</p>`;
+                        avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
                     } else {
                         avatarContainer.innerHTML = `
                             <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
@@ -42,17 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         avatarUsername.textContent = data.username;
                     }
 
-                    avatarSection.style.display = 'block'; // Show avatar section
+                    // Show avatar section
+                    avatarSection.style.display = 'block';
                 })
                 .catch((error) => {
-                    console.error('Error:', error);
+                    console.error('Fetch error:', error);
+
+                    // Hide loading section
                     loadingSection.style.display = 'none';
-                    avatarContainer.innerHTML = '<p>An unexpected error occurred.</p>';
+
+                    // Show error message
+                    avatarContainer.innerHTML = '<p class="error">An unexpected error occurred. Please try again.</p>';
                     avatarSection.style.display = 'block';
                 });
-        }, 3000);
+        }, 3000); // 3-second loading simulation
     });
 
+    // Go back to input section
     backButton.addEventListener('click', () => {
         avatarSection.style.display = 'none'; // Hide avatar section
         inputSection.style.display = 'block'; // Show input section
