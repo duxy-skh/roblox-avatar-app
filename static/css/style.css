@@ -173,9 +173,9 @@ nav ul li a:hover {
 
 /* Avatar Section */
 #avatar-section {
-    display: none;
     text-align: center;
     margin-top: 20px;
+    width: 100%;
 }
 
 #avatar-section h2 {
@@ -197,24 +197,7 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* Back Button */
-#avatar-section button {
-    background-color: #333;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-#avatar-section button:hover {
-    background-color: #555;
-}
-
-/* Selection Section */
+/* Selection Section (Above Avatar) */
 #selection-section {
     margin: 20px auto;
     padding: 20px;
@@ -268,13 +251,22 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
-.robux-button::before {
-    content: url('/static/images/robux-icon.png'); /* Add your Robux icon image here */
-    display: inline-block;
-    height: 16px;
-    width: 16px;
+/* Back Button */
+#avatar-section button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
 }
 
+#avatar-section button:hover {
+    background-color: #555;
+}
 
 /* Footer */
 footer {
