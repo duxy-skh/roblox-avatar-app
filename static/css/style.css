@@ -21,20 +21,8 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav .logo {
-    display: flex;
-    align-items: center;
-}
-
 nav .logo img {
     height: 30px;
-    margin-right: 10px;
-}
-
-nav .logo span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #393b3d;
 }
 
 nav ul {
@@ -64,17 +52,16 @@ nav ul li a:hover {
 #banner {
     position: relative;
     text-align: center;
-    width: 80%;
-    max-width: 600px;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 #banner img {
     width: 100%;
-    max-height: 970px;
+    height: auto;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
 }
 
 .banner-text {
@@ -89,13 +76,23 @@ nav ul li a:hover {
 }
 
 .banner-text h1 {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .banner-text p {
-    font-size: 14px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 20px;
+    }
+
+    .banner-text p {
+        font-size: 14px;
+    }
 }
 
 /* Input Section */
@@ -140,75 +137,6 @@ nav ul li a:hover {
 
 #input-section button:hover {
     background-color: #0056b3;
-}
-
-/* Loading Animation */
-#loading-section {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #007bff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin: 20px auto;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Avatar Section */
-#avatar-section {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-}
-
-#avatar-section h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-#avatar-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #007bff;
-    margin-bottom: 10px;
-}
-
-#avatar-container p {
-    color: red;
-    font-weight: bold;
-}
-
-/* Back Button */
-#avatar-section button {
-    background-color: #333;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-#avatar-section button:hover {
-    background-color: #555;
 }
 
 /* Footer */
