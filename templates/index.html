@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo">
             <img src="/static/images/robuxlogo.png" alt="Roblox Logo">
-            <span>ROBLOX</span>
+            <span></span>
         </div>
         <ul>
             <li><a href="https://www.roblox.com/discover#/" target="_blank">Discover</a></li>
@@ -20,8 +20,13 @@
         </ul>
     </nav>
 
-    <!-- Main Section -->
+    <!-- Main Content -->
     <div class="main-content">
+        <!-- Banner Section -->
+        <div id="banner">
+            <img src="/static/images/fireworks.png" alt="Roblox Banner">
+        </div>
+
         <!-- Username Input Section -->
         <div id="input-section">
             <h2>Fetch Your Roblox Avatar</h2>
@@ -30,13 +35,13 @@
             <button id="fetch-button">Fetch Avatar</button>
         </div>
 
-        <!-- Loading Animation -->
+        <!-- Loading Section -->
         <div id="loading-section" style="display: none;">
             <p>Loading...</p>
             <div class="loader"></div>
         </div>
 
-        <!-- Avatar Display Section -->
+        <!-- Avatar Section -->
         <div id="avatar-section" style="display: none;">
             <h2>Avatar for <span id="avatar-username"></span></h2>
             <div id="avatar-container"></div>
@@ -44,6 +49,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p class="para">© 2024 ROBLOX. All Rights Reserved.</p>
     </footer>
