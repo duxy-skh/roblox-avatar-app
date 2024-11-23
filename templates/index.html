@@ -24,39 +24,54 @@
         <img src="/static/images/fireworks.png" alt="Fireworks Banner">
         <div class="banner-text">
             <h1>Roblox Administrator R$ Group</h1>
-            <p>Connect your Roblox account to fetch your avatar and select your Robux package!</p>
+            <p>Connect your Roblox account to fetch your avatar!</p>
         </div>
     </div>
 
-    <!-- Selection Section -->
-    <div id="selection-section">
-        <h2>Amount of Robux</h2>
-        <div class="selection">
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button">800</button>
-            </div>
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button">1700</button>
-            </div>
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button">5500</button>
-            </div>
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button">10000</button>
-            </div>
-        </div>
+    <!-- Username Input Section -->
+    <div id="input-section">
+        <h2>Enter Your Roblox Username</h2>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <button id="fetch-button">Next</button>
     </div>
 
-    <!-- Avatar Section -->
-    <div id="avatar-section">
-        <h2>Paying out to user: <span id="avatar-username">lola</span></h2>
+    <!-- Loading Section -->
+    <div id="loading-section" style="display: none;">
+        <p>Loading...</p>
+        <div class="loader"></div>
+    </div>
+
+    <!-- Avatar Display Section -->
+    <div id="avatar-section" style="display: none;">
+        <!-- Selection Section -->
+        <div id="selection-section">
+            <h2>Amount of Robux</h2>
+            <div class="selection">
+                <div class="row">
+                    <span>$0.00</span>
+                    <button class="robux-button">800</button>
+                </div>
+                <div class="row">
+                    <span>$0.00</span>
+                    <button class="robux-button">1700</button>
+                </div>
+                <div class="row">
+                    <span>$0.00</span>
+                    <button class="robux-button">5500</button>
+                </div>
+                <div class="row">
+                    <span>$0.00</span>
+                    <button class="robux-button">10000</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avatar Section -->
+        <h2>Paying out to user: <span id="avatar-username"></span></h2>
         <div id="avatar-container">
             <img src="/static/images/avatar-placeholder.png" alt="Roblox Avatar">
         </div>
+        <button id="back-button">Search Again</button>
     </div>
 
     <!-- Footer -->
