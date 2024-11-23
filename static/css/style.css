@@ -134,7 +134,67 @@ nav ul li a:hover {
 #input-section button:hover {
     background-color: #555;
 }
+/* Loading Animation */
+#loading-section {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
 
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Avatar Section */
+#avatar-section {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#avatar-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
+}
+
+#avatar-container p {
+    color: red;
+    font-weight: bold;
+}
+
+#avatar-section button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#avatar-section button:hover {
+    background-color: #555;
+}
 /* Footer */
 footer {
     text-align: center;
