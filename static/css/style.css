@@ -3,7 +3,7 @@ body {
     font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
     color: #333;
 }
 
@@ -15,7 +15,6 @@ nav {
     padding: 10px 20px;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #e0e0e0;
 }
 
 nav .logo {
@@ -57,24 +56,40 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
-/* Main Content Section */
-.main-content {
-    text-align: center;
-    padding: 50px 20px;
-}
-
 /* Banner Section */
 #banner {
+    position: relative;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #banner img {
     width: 100%;
-    max-width: 800px; /* Limit banner width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for modern look */
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.banner-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin: 5px 0;
 }
 
 /* Input Section */
@@ -85,81 +100,27 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     max-width: 400px;
+    text-align: center;
+}
+
+#input-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 #input-section input {
     width: calc(100% - 20px);
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 #input-section button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s;
-}
-
-#input-section button:hover {
-    background-color: #0056b3;
-}
-
-/* Loading Animation */
-#loading-section {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #007bff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin: 20px auto;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Avatar Section */
-#avatar-section {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-}
-
-#avatar-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #007bff;
-    margin-bottom: 10px;
-}
-
-#avatar-container p {
-    color: red;
-    font-weight: bold;
-}
-
-#avatar-section button {
     background-color: #333;
     color: #ffffff;
     border: none;
@@ -167,11 +128,10 @@ nav ul li a:hover {
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
     transition: background-color 0.3s;
 }
 
-#avatar-section button:hover {
+#input-section button:hover {
     background-color: #555;
 }
 
