@@ -52,9 +52,11 @@ nav ul li a:hover {
 #banner {
     position: relative;
     text-align: center;
-    width: 100%;
-    max-width: 100%;
+    width: 80%; /* Restrict banner width to 80% */
+    margin: 20px auto;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a soft shadow for better design */
 }
 
 #banner img {
@@ -86,6 +88,10 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    #banner {
+        width: 90%; /* Make the banner even smaller on small screens */
+    }
+
     .banner-text h1 {
         font-size: 20px;
     }
@@ -137,6 +143,75 @@ nav ul li a:hover {
 
 #input-section button:hover {
     background-color: #0056b3;
+}
+
+/* Loading Animation */
+#loading-section {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light gray */
+    border-top: 8px solid #007bff; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Avatar Section */
+#avatar-section {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#avatar-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#avatar-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 10px;
+}
+
+#avatar-container p {
+    color: red;
+    font-weight: bold;
+}
+
+/* Back Button */
+#avatar-section button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#avatar-section button:hover {
+    background-color: #555;
 }
 
 /* Footer */
