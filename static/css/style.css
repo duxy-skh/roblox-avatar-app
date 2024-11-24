@@ -526,18 +526,20 @@ nav .menu li a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
-    max-width: 600px; /* Restrict maximum width for larger screens */
-    box-sizing: border-box; /* Include padding in the width calculation */
+    max-width: <800px; /* Ensure consistency with the banner's max width */
+    box-sizing: border-box; /* Include padding in width */
 }
 
-/* Ensure Consistent Width Across Screens */
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     #input-section,
     #selection-section,
     #verification-section {
         width: 90%; /* Slightly narrower on smaller screens */
+        max-width: 90%; /* Override max width for smaller devices */
     }
 }
+
 
 
 /* Footer */
