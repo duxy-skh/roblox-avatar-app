@@ -409,23 +409,25 @@ nav .menu li a:hover {
         transform: rotate(360deg);
     }
 }
-
 /* Verification Section */
 #verification-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 70vh; /* Take at least 70% of the viewport height */
+    margin: 0 auto; /* Center section within the screen */
 }
 
 #verification-container {
     background-color: #FFFFFF;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 80%;
-    max-width: 600px;
+    width: 80%; /* Match the banner's width */
+    max-width: 600px; /* Restrict maximum width for larger screens */
+    margin: 0 auto; /* Ensure the container is centered */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 #verification-container h2 {
@@ -471,17 +473,6 @@ nav .menu li a:hover {
     font-size: 16px;
     font-weight: bold;
     padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-#join-group-button:hover {
-    background-color: #008F5C;
-    transform: scale(1.05);
-}
-
 }
 /* Default Logo */
 .logo {
