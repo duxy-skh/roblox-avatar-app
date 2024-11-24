@@ -376,23 +376,30 @@ nav .menu li a:hover {
     transform: scale(1.05); /* Slight enlargement for active button */
 }
 
-/* Button Styles */
-#button-container button {
+/* General Button Styles */
+button {
     background-color: #00AF6E; /* Green background */
     color: #FFFFFF; /* White text */
-    border: none;
-    padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
+    padding: 12px 25px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    margin: 5px; /* Add spacing between buttons */
+    box-shadow: none; /* Remove unwanted shadows */
 }
 
-#button-container button:hover {
+button:hover {
     background-color: #008F5C; /* Darker green on hover */
     transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Specific Styling for Join Group Button */
+#join-group-button {
+    display: inline-block; /* Ensure it behaves like other buttons */
+    margin: 0 auto; /* Center the button if inside a flex container */
+    box-shadow: none; /* Remove extra shadow for consistency */
 }
 
 /* Align Buttons */
