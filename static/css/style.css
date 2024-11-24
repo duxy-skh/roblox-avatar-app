@@ -47,31 +47,16 @@ nav .menu li {
     display: inline-block;
 }
 
-/* Navigation Menu Item */
 nav .menu li a {
-    text-decoration: none; /* Remove default underline */
+    text-decoration: none;
     font-weight: 600;
     font-size: 16px;
-    color: #383B3D; /* Default text color */
-    position: relative; /* Required for pseudo-element positioning */
-    transition: color 0.3s ease; /* Smooth transition for color changes */
+    color: #383B3D;
+    transition: color 0.3s ease;
 }
 
-/* Add underline effect on hover using pseudo-element */
-nav .menu li a::after {
-    content: ""; /* Empty content for the pseudo-element */
-    position: absolute;
-    bottom: -3px; /* Position below the text */
-    left: 0;
-    width: 0; /* Start with no width */
-    height: 2px; /* Thickness of the underline */
-    background-color: #383B3D; /* Match the text color */
-    transition: width 0.3s ease; /* Smooth animation for the underline */
-}
-
-/* Hover effect to grow the underline */
-nav .menu li a:hover::after {
-    width: 100%; /* Full width on hover */
+nav .menu li a:hover {
+    color: #007bff;
 }
 
 /* Burger Menu Button (hidden by default for large screens) */
@@ -137,6 +122,8 @@ nav .menu li a:hover::after {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+
 
 /* Banner Section */
 #banner {
