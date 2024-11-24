@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // DOM elements
     const fetchButton = document.getElementById('fetch-button');
     const backButton = document.getElementById('back-button');
+    const nextButton = document.getElementById('next-button');
     const inputSection = document.getElementById('input-section');
     const loadingSection = document.getElementById('loading-section');
     const avatarSection = document.getElementById('avatar-section');
     const avatarContainer = document.getElementById('avatar-container');
     const avatarUsername = document.getElementById('avatar-username');
+    const verificationSection = document.getElementById('verification-section');
+    const errorMessage = document.getElementById('error-message');
+    const successContent = document.getElementById('success-content');
+    let selectedRobux = null;
 
+    // Handle Fetch Button Click
     fetchButton.addEventListener('click', () => {
         const username = document.getElementById('username').value.trim();
 
@@ -15,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Show loading section and hide input section
+        // Show loading section, hide input section
         inputSection.style.display = 'none';
         loadingSection.style.display = 'block';
 
-        // Simulate loading for 3 seconds
+        // Simulate API call
         setTimeout(() => {
-            // Fetch avatar data from the Flask API
             fetch('/api/avatar', {
                 method: 'POST',
                 headers: {
@@ -31,30 +37,80 @@ document.addEventListener('DOMContentLoaded', () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    loadingSection.style.display = 'none'; // Hide loading section
+                    // Hide loading section
+                    loadingSection.style.display = 'none';
 
                     if (data.error) {
-                        avatarContainer.innerHTML = `<p>${data.error}</p>`;
+                        // Handle user not found
+                        avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
+                        errorMessage.style.display = 'block'; // Show error message
+                        successContent.style.display = 'none'; // Hide success content
+                        avatarSection.style.display = 'block'; // Show avatar section
+                        nextButton.style.display = 'none'; // Hide Next button
                     } else {
+                        // Display avatar and success content
                         avatarContainer.innerHTML = `
                             <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
                         `;
                         avatarUsername.textContent = data.username;
+                        errorMessage.style.display = 'none'; // Hide error message
+                        successContent.style.display = 'block'; // Show success content
+                        avatarSection.style.display = 'block'; // Show avatar section
+                        nextButton.style.display = 'inline-block'; // Show Next button
+                        localStorage.setItem('username', data.username); // Save username
                     }
-
-                    avatarSection.style.display = 'block'; // Show avatar section
                 })
                 .catch((error) => {
-                    console.error('Error:', error);
+                    console.error('Fetch error:', error);
                     loadingSection.style.display = 'none';
-                    avatarContainer.innerHTML = '<p>An unexpected error occurred.</p>';
-                    avatarSection.style.display = 'block';
+
+                    // Show unexpected error
+                    avatarContainer.innerHTML = '<p class="error">An unexpected error occurred. Please try again.</p>';
+                    errorMessage.style.display = 'block'; // Show error message
+                    successContent.style.display = 'none'; // Hide success content
+                    avatarSection.style.display = 'block'; // Show avatar section
+                    nextButton.style.display = 'none'; // Hide Next button
                 });
-        }, 3000);
+        }, 3000); // Simulated delay for loading
     });
 
+    // Handle Robux Selection
+    document.querySelectorAll('.robux-button').forEach((button) => {
+        button.addEventListener('click', function () {
+            // Remove active class from all buttons
+            document
+                .querySelectorAll('.robux-button')
+                .forEach((btn) => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            this.classList.add('active');
+            selectedRobux = this.getAttribute('data-amount');
+            localStorage.setItem('selectedRobux', selectedRobux); // Save selected Robux
+        });
+    });
+
+    // Handle Next Button
+    nextButton.addEventListener('click', () => {
+        if (!selectedRobux) {
+            alert('Please select a Robux amount!');
+            return;
+        }
+
+        // Show verification section
+        avatarSection.style.display = 'none';
+        verificationSection.style.display = 'block';
+
+        // Populate verification details
+        document.getElementById('verification-username').textContent = localStorage.getItem('username');
+        document.getElementById('verification-robux').textContent = localStorage.getItem('selectedRobux');
+    });
+
+    // Handle Back Button
     backButton.addEventListener('click', () => {
-        avatarSection.style.display = 'none'; // Hide avatar section
-        inputSection.style.display = 'block'; // Show input section
+        // Reset to input section
+        avatarSection.style.display = 'none';
+        inputSection.style.display = 'block';
+        errorMessage.style.display = 'none'; // Hide error message
+        successContent.style.display = 'none'; // Hide success content
     });
 });
