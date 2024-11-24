@@ -452,19 +452,20 @@ button:hover {
     align-items: center; /* Center vertically */
     min-height: 70vh; /* Take at least 70% of the viewport height */
     margin: 0 auto; /* Center section within the screen */
-    background-color: #F1F4F5; /* Match the page background for seamless integration */
+    background-color: transparent; /* Remove any background color */
 }
 
+/* Verification Container */
 #verification-container {
-    background-color: #FFFFFF; /* Single background for the container */
+    background-color: #FFFFFF; /* Single background for the content */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 80%; /* Match the banner's width */
-    max-width: 600px; /* Restrict maximum width for larger screens */
-    margin: 0 auto; /* Ensure the container is centered */
-    box-sizing: border-box; /* Include padding in the width calculation */
+    width: 100%; /* Fill the section's width */
+    max-width: 800px; /* Restrict to a maximum size */
+    margin: 0; /* Align perfectly within the section */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 #verification-container h2 {
