@@ -73,6 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         }, 3000); // Simulated delay for loading
     });
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerMenu = document.getElementById('burger-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    burgerMenu.addEventListener('click', () => {
+        // Toggle the active class on the burger menu and nav menu
+        burgerMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+});
 
     // Handle Robux Selection
     document.querySelectorAll('.robux-button').forEach((button) => {
@@ -125,17 +135,6 @@ nextButton.addEventListener('click', function () {
         inputSection.style.display = 'block';
         errorMessage.style.display = 'none'; // Hide error message
         successContent.style.display = 'none'; // Hide success content
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const burgerMenu = document.getElementById('burger-menu');
-    const navMenu = document.getElementById('nav-menu');
-
-    burgerMenu.addEventListener('click', () => {
-        // Toggle the active class on the burger menu and nav menu
-        burgerMenu.classList.toggle('active');
-        navMenu.classList.toggle('active');
     });
 });
 
