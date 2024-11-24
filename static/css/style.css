@@ -264,6 +264,32 @@ nav ul li a:hover {
     color: #FFFFFF;
     border-color: #008F5C;
 }
+/* Button Styles */
+#button-container button {
+    background-color: #00AF6E; /* Green background */
+    color: #FFFFFF; /* White text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px; /* Add spacing between buttons */
+}
+
+#button-container button:hover {
+    background-color: #008F5C; /* Darker green on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Align Buttons */
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between the buttons */
+}
+
 
 /* Footer */
 footer {
