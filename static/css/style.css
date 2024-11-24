@@ -526,12 +526,22 @@ nav .menu li a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
-    max-width: <800px; /* Ensure consistency with the banner's max width */
+    max-width: 800px; /* Restrict maximum width for larger screens */
     box-sizing: border-box; /* Include padding in width */
 }
 
+/* Adjust Width for PC (Larger Screens) */
+@media (min-width: 1024px) {
+    #input-section,
+    #selection-section,
+    #verification-section {
+        width: 80%; /* Keep width consistent with the banner */
+        max-width: 800px; /* Match banner's max width */
+    }
+}
+
 /* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     #input-section,
     #selection-section,
     #verification-section {
@@ -539,6 +549,7 @@ nav .menu li a:hover {
         max-width: 90%; /* Override max width for smaller devices */
     }
 }
+
 
 
 
