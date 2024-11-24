@@ -10,6 +10,43 @@ body {
     align-items: center;
 }
 
+/* Navigation Bar */
+nav {
+    background-color: #DEE1E3;
+    width: 100vw; /* Ensure full width of the viewport */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensures proper positioning */
+    z-index: 10; /* Keeps it above other content */
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Make sure it spans the full width */
+    max-width: 1200px; /* Optional: Restrict the content width on larger screens */
+    margin: 0 auto;
+    padding: 10px 20px; /* Space inside the navbar */
+    box-sizing: border-box; /* Includes padding in the width */
+}
+
+nav .logo img {
+    height: 30px;
+}
+
+/* Menu for larger screens */
+nav .menu {
+    list-style: none;
+    display: flex; /* Horizontal layout for larger screens */
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav .menu li {
+    display: inline-block;
+}
+
 /* Navigation Menu Item */
 nav .menu li a {
     text-decoration: none; /* Remove default underline */
@@ -35,31 +72,6 @@ nav .menu li a::after {
 /* Hover effect to grow the underline */
 nav .menu li a:hover::after {
     width: 100%; /* Full width on hover */
-}
-
-/* Menu for larger screens */
-nav .menu {
-    list-style: none;
-    display: flex; /* Horizontal layout for larger screens */
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-}
-
-nav .menu li {
-    display: inline-block;
-}
-
-nav .menu li a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    color: #383B3D;
-    transition: color 0.3s ease;
-}
-
-nav .menu li a:hover {
-    color: #007bff;
 }
 
 /* Burger Menu Button (hidden by default for large screens) */
@@ -125,7 +137,6 @@ nav .menu li a:hover {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
-
 
 
 /* Banner Section */
