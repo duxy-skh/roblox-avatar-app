@@ -127,3 +127,15 @@ nextButton.addEventListener('click', function () {
         successContent.style.display = 'none'; // Hide success content
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerMenu = document.getElementById('burger-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    burgerMenu.addEventListener('click', () => {
+        // Toggle the active class on the burger menu and nav menu
+        burgerMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+});
+
