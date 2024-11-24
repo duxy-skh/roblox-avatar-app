@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-   // Handle Next Button
+  // Handle Next Button
 nextButton.addEventListener('click', function () {
     if (selectedRobux) {
         // Show the Robux loading section
@@ -109,6 +109,9 @@ nextButton.addEventListener('click', function () {
                 localStorage.getItem('username');
             document.getElementById('verification-robux').textContent =
                 localStorage.getItem('selectedRobux');
+            document
+                .getElementById('verification-avatar')
+                .setAttribute('src', avatarContainer.querySelector('img').getAttribute('src'));
         }, 3000); // 3-second loading simulation
     } else {
         alert('Please select a Robux amount!');
