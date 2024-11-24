@@ -478,6 +478,38 @@ nav .menu li a:hover {
 }
 
 }
+/* Default Logo */
+.logo {
+    display: block; /* Visible by default */
+}
+
+.logo img {
+    height: 30px;
+}
+
+/* Small Screen Logo */
+.logo-small {
+    display: none; /* Hidden by default */
+}
+
+.logo-small img {
+    height: 25px; /* Smaller logo size */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .logo {
+        display: none; /* Hide the default logo on smaller screens */
+    }
+
+    .logo-small {
+        display: block; /* Show the small logo on smaller screens */
+    }
+
+    .burger-menu {
+        display: flex; /* Ensure burger menu is still visible */
+    }
+}
 
 /* Footer */
 footer {
