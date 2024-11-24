@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('nav-menu');
 
     burgerMenu.addEventListener('click', () => {
-        // Toggle the active class on the burger menu and nav menu
         burgerMenu.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
 });
+
