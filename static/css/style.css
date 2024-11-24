@@ -493,7 +493,7 @@ nav .menu li a:hover {
 }
 
 .logo-small img {
-    height: 25px; /* Smaller logo size */
+    height: 50px; /* Smaller logo size */
 }
 
 /* Media Query for Small Screens */
