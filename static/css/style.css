@@ -21,19 +21,19 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Set a max-width for centering */
-    margin: 0 auto; /* Center the container */
-    padding: 10px 20px; /* Add some padding */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
 }
 
 nav .logo img {
-    height: 30px; /* Adjust the size of the logo */
+    height: 30px;
 }
 
 nav .menu {
     list-style: none;
     display: flex;
-    gap: 25px; /* Space between menu items */
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
@@ -45,29 +45,83 @@ nav .menu li {
 nav .menu li a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 16px; /* Adjust font size */
+    font-size: 16px;
     color: #383B3D;
     transition: color 0.3s ease;
 }
 
 nav .menu li a:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff;
 }
 
-/* Responsive Navbar */
+/* Burger Menu Button */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.burger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #383B3D;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hide menu on smaller screens */
+#nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
 @media (max-width: 768px) {
-    nav .container {
-        padding: 10px; /* Reduce side padding for smaller screens */
-    }
-
     nav .menu {
-        gap: 15px; /* Reduce gap on smaller screens */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #DEE1E3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        width: 200px;
+        padding: 15px 0;
     }
 
-    nav .menu li a {
-        font-size: 14px; /* Adjust font size for smaller screens */
+    nav .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .burger-menu {
+        display: flex; /* Show burger menu */
+    }
+
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #nav-menu.active {
+        display: flex;
     }
 }
+
 
 /* Banner Section */
 #banner {
