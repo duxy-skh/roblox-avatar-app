@@ -164,7 +164,7 @@ nav .menu li a {
 }
 
 #banner img {
-    width: 100%;
+    width: 75%;
     height: auto;
     object-fit: cover;
     max-height: 200px; /* Reduced max height for a smaller banner */
@@ -442,14 +442,7 @@ button:hover {
     100% {
         transform: rotate(360deg);
     }
-}
-/* Verification Section */
-#verification-section {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 70vh; /* Take at least 70% of the viewport height */
-    margin: 0 auto; /* Center section within the screen */
+
 }
 
 #verification-container {
