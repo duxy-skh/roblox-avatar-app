@@ -10,6 +10,14 @@ body {
     align-items: center;
 }
 
+/* Navigation Bar */
+nav {
+    background-color: #DEE1E3;
+    width: 100vw; /* Ensure full width of the viewport */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensures proper positioning */
+    z-index: 10; /* Keeps it above other content */
+}
 /* Navigation Menu Item */
 nav .menu li a {
     text-decoration: none; /* Remove default underline */
