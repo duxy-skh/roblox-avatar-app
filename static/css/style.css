@@ -25,7 +25,7 @@ nav .menu li a {
     font-size: 16px;
     color: #383B3D; /* Default text color */
     position: relative; /* Required for pseudo-element positioning */
-    transition: color 0.3s ease; /* Smooth transition for color changes */
+    transition: color 0.0s ease; /* Smooth transition for color changes */
 }
 
 /* Add underline effect on hover using pseudo-element */
@@ -37,7 +37,7 @@ nav .menu li a::after {
     width: 0; /* Start with no width */
     height: 2px; /* Thickness of the underline */
     background-color: #383B3D; /* Match the text color */
-    transition: width 0.3s ease; /* Smooth animation for the underline */
+    transition: width 0.0s ease; /* Smooth animation for the underline */
 }
 
 /* Hover effect to grow the underline */
