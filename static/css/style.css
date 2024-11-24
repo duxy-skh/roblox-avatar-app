@@ -228,26 +228,41 @@ nav ul li a:hover {
     border-bottom: none;
 }
 
+.selection .row span {
+    font-size: 16px;
+    color: #383B3D;
+    font-weight: bold;
+}
+
 .robux-button {
     background-color: #FFFFFF;
     color: #383B3D;
     border: 1px solid #DEE1E3;
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.robux-button img.robux-icon {
+    width: 20px;
+    height: 20px;
 }
 
 .robux-button:hover {
-    background-color: #007bff;
+    background-color: #00AF6E;
     color: #FFFFFF;
 }
 
 .robux-button.active {
-    background-color: #007bff;
+    background-color: #00AF6E;
     color: #FFFFFF;
-    border-color: #0056b3;
+    border-color: #008F5C;
 }
 
 /* Footer */
