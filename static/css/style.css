@@ -74,7 +74,7 @@ nav .menu li a:hover::after {
     width: 100%; /* Full width on hover */
 }
 
-/* Burger Menu Button */
+/* Burger Menu Button (hidden by default for large screens) */
 .burger-menu {
     display: none; /* Only visible on smaller screens */
     flex-direction: column;
@@ -82,38 +82,61 @@ nav .menu li a:hover::after {
     width: 25px;
     height: 18px;
     border: none;
-    background: none; /* Ensure no background color */
+    background: none;
     cursor: pointer;
     padding: 0;
-    outline: none; /* Remove default focus outline */
 }
 
 .burger-menu span {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: #383B3D; /* Dark gray color for bars */
+    background-color: #383B3D;
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
 }
 
-/* Active State */
-.burger-menu.active {
-    background: none; /* Prevent background color when clicked */
-}
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    nav .menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Aligns below navbar */
+        right: 20px; /* Aligns to the right edge */
+        left: 20px; /* Added to ensure consistent centering */
+        background-color: #DEE1E3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        width: calc(100% - 40px); /* Ensure consistent padding */
+        padding: 15px 0;
+    }
 
-.burger-menu.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
+    nav .menu.active {
+        display: flex; /* Show menu when burger menu is clicked */
+    }
 
-.burger-menu.active span:nth-child(2) {
-    opacity: 0;
-}
+    nav .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
 
-.burger-menu.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
+    .burger-menu {
+        display: flex; /* Show burger menu */
+    }
 
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
 
 /* Banner Section */
 #banner {
