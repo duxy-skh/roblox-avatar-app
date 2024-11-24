@@ -515,6 +515,31 @@ nav .menu li a:hover {
     }
 }
 
+/* General Box Styling */
+#input-section,
+#selection-section,
+#verification-section {
+    width: 80%; /* Match the banner's width */
+    margin: 20px auto; /* Center the box */
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px; /* Restrict maximum width for larger screens */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Ensure Consistent Width Across Screens */
+@media (max-width: 768px) {
+    #input-section,
+    #selection-section,
+    #verification-section {
+        width: 90%; /* Slightly narrower on smaller screens */
+    }
+}
+
+
 /* Footer */
 footer {
     text-align: center;
