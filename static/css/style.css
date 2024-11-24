@@ -232,20 +232,25 @@ nav ul li a:hover {
     font-size: 16px;
     color: #383B3D;
     font-weight: bold;
+    align-self: center;
+    text-align: center;
 }
 
+/* Robux Button Styling */
 .robux-button {
     background-color: #FFFFFF;
     color: #383B3D;
     border: 1px solid #DEE1E3;
-    padding: 10px 20px;
+    width: 120px; /* Set fixed width */
+    height: 50px; /* Set fixed height */
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center; /* Center text and icon */
+    gap: 8px; /* Space between icon and text */
     transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -263,7 +268,9 @@ nav ul li a:hover {
     background-color: #00AF6E;
     color: #FFFFFF;
     border-color: #008F5C;
+    transform: scale(1.05); /* Slight enlargement for active button */
 }
+
 /* Button Styles */
 #button-container button {
     background-color: #00AF6E; /* Green background */
