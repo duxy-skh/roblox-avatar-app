@@ -332,7 +332,54 @@ nav ul li a:hover {
     }
 }
 
+/* Verification Section */
+#verification-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Ensure the section is vertically centered */
+}
 
+#verification-container {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%; /* Responsive width */
+    max-width: 600px; /* Prevent overly large containers */
+}
+
+#verification-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #383B3D;
+}
+
+#verification-container p {
+    font-size: 16px;
+    color: #383B3D;
+    margin-bottom: 30px;
+    line-height: 1.5; /* Improve readability */
+}
+
+#join-group-button {
+    background-color: #00AF6E; /* Match button color */
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#join-group-button:hover {
+    background-color: #008F5C; /* Darker green on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
 
 /* Footer */
 footer {
