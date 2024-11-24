@@ -129,7 +129,7 @@ nav .menu li a:hover {
 #banner {
     position: relative;
     text-align: center;
-    width: 80%;
+    width: 70%; /* Reduced width to make it smaller */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -140,7 +140,7 @@ nav .menu li a:hover {
     width: 100%;
     height: auto;
     object-fit: cover;
-    max-height: 300px;
+    max-height: 200px; /* Reduced max height for a smaller banner */
 }
 
 .banner-text {
@@ -155,26 +155,27 @@ nav .menu li a:hover {
 }
 
 .banner-text h1 {
-    font-size: 28px;
+    font-size: 24px; /* Adjusted font size for smaller banner */
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .banner-text p {
-    font-size: 16px;
+    font-size: 14px; /* Adjusted font size for smaller banner */
 }
 
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     #banner {
-        width: 90%;
+        width: 85%; /* Adjusted width for smaller screens */
     }
 
     .banner-text h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .banner-text p {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
