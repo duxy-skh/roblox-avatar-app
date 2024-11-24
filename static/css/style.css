@@ -164,10 +164,10 @@ nav .menu li a {
 }
 
 #banner img {
-    width: 75%;
+    width: 100%;
     height: auto;
     object-fit: cover;
-    max-height: 200px; /* Reduced max height for a smaller banner */
+    max-height: 125px; /* Reduced max height for a smaller banner */
 }
 
 .banner-text {
@@ -462,13 +462,6 @@ button:hover {
     font-weight: bold;
     margin-bottom: 20px;
     color: #383B3D;
-}
-
-#verification-container p {
-    font-size: 16px;
-    color: #383B3D;
-    margin-bottom: 30px;
-    line-height: 1.5;
 }
 
 #verification-details {
