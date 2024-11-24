@@ -15,14 +15,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 40px; /* Add margin-like padding on the sides */
     background-color: #DEE1E3;
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav .logo img {
-    height: 30px; /* Adjust the size of the logo */
+    height: 30px; /* Adjust logo size */
 }
 
 nav .menu {
@@ -49,8 +49,12 @@ nav .menu li a:hover {
     color: #007bff; /* Change color on hover */
 }
 
-/* Responsive Header */
+/* Responsive Navbar */
 @media (max-width: 768px) {
+    nav {
+        padding: 10px 20px; /* Reduce side padding for smaller screens */
+    }
+
     nav .menu {
         gap: 15px; /* Reduce gap on smaller screens */
     }
