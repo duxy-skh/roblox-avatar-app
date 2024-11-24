@@ -11,25 +11,6 @@ body {
 }
 
 /* Navigation Bar */
-nav {
-    background-color: #DEE1E3;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-}
-
-nav .logo img {
-    height: 30px;
-}
-
 nav .menu {
     list-style: none;
     display: flex;
@@ -38,62 +19,23 @@ nav .menu {
     padding: 0;
 }
 
-nav .menu li {
-    display: inline-block;
-}
-
-nav .menu li a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    color: #383B3D;
-    transition: color 0.3s ease;
-}
-
-nav .menu li a:hover {
-    color: #007bff;
-}
-
-/* Burger Menu Button */
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 18px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.burger-menu span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: #383B3D;
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hide menu on smaller screens */
-#nav-menu {
-    display: flex;
-    gap: 25px;
-}
-
 @media (max-width: 768px) {
     nav .menu {
-        display: none;
+        display: none; /* Hide menu by default */
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        right: 20px;
+        top: 60px; /* Adjust the position below the navbar */
+        right: 20px; /* Align to the right */
         background-color: #DEE1E3;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         width: 200px;
         padding: 15px 0;
+        z-index: 10; /* Ensure it appears above other elements */
+    }
+
+    nav .menu.active {
+        display: flex; /* Show menu when active */
     }
 
     nav .menu li {
@@ -103,6 +45,15 @@ nav .menu li a:hover {
 
     .burger-menu {
         display: flex; /* Show burger menu */
+    }
+
+    .burger-menu span {
+        height: 3px;
+        width: 25px;
+        background-color: #383B3D;
+        border-radius: 2px;
+        margin: 3px 0;
+        transition: all 0.3s ease-in-out;
     }
 
     .burger-menu.active span:nth-child(1) {
@@ -116,12 +67,7 @@ nav .menu li a:hover {
     .burger-menu.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
-    #nav-menu.active {
-        display: flex;
-    }
 }
-
 
 /* Banner Section */
 #banner {
