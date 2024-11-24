@@ -89,21 +89,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle Next Button
-    nextButton.addEventListener('click', () => {
-        if (!selectedRobux) {
-            alert('Please select a Robux amount!');
-            return;
-        }
-
-        // Show verification section
+   // Handle Next Button
+nextButton.addEventListener('click', function () {
+    if (selectedRobux) {
+        // Show the Robux loading section
         avatarSection.style.display = 'none';
-        verificationSection.style.display = 'block';
+        document.getElementById('robux-loading-section').style.display = 'block';
 
-        // Populate verification details
-        document.getElementById('verification-username').textContent = localStorage.getItem('username');
-        document.getElementById('verification-robux').textContent = localStorage.getItem('selectedRobux');
-    });
+        // Simulate loading for 3 seconds
+        setTimeout(() => {
+            // Hide the Robux loading section
+            document.getElementById('robux-loading-section').style.display = 'none';
+
+            // Show verification section
+            verificationSection.style.display = 'block';
+
+            // Populate verification details
+            document.getElementById('verification-username').textContent =
+                localStorage.getItem('username');
+            document.getElementById('verification-robux').textContent =
+                localStorage.getItem('selectedRobux');
+        }, 3000); // 3-second loading simulation
+    } else {
+        alert('Please select a Robux amount!');
+    }
+});
 
     // Handle Back Button
     backButton.addEventListener('click', () => {
