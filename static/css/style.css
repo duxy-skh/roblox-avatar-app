@@ -699,18 +699,6 @@ button:hover {
   color: #383B3D;
 }
 
-    /* Container Styles (General) */
-#recent-payouts {
-  background-color: #f1f4f5;
-  padding: 20px;
-  margin: 50px auto;
-  width: 100%;
-  max-width: 1200px; /* Constrained for larger screens */
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 /* Title Styles */
 #recent-payouts .section-title {
   font-size: 24px;
@@ -764,21 +752,6 @@ button:hover {
 .payout-amount {
   font-size: 16px;
   color: #555;
-}
-
-/* Responsive Styles for Medium Screens (Tablets) */
-@media (max-width: 991px) {
-  #recent-payouts {
-    padding: 15px;
-  }
-
-  .payouts-container {
-    justify-content: center; /* Center-align cards */
-  }
-
-  .payout-card {
-    width: calc(50% - 20px); /* Fit 2 cards per row */
-  }
 }
 
 /* Responsive Styles for Small Screens (Phones) */
