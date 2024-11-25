@@ -645,7 +645,7 @@ button:hover {
         max-width: 90%; /* Override max width for smaller devices */
     }
 
-    /* Recent Payouts Section */
+/* Recent Payouts Section */
 #recent-payouts {
   margin: 50px auto;
   padding: 20px;
@@ -665,9 +665,9 @@ button:hover {
 
 .payouts-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
-  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
 }
 
 .payout-card {
@@ -676,7 +676,8 @@ button:hover {
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px; /* Fixed width for each card */
+  width: 300px; /* Default width for cards on desktop */
+  flex-shrink: 0;
 }
 
 .payout-avatar {
@@ -701,17 +702,18 @@ button:hover {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
+  #recent-payouts {
+    padding: 20px 0;
+  }
+
   .payouts-container {
-    display: flex;
-    flex-direction: column; /* Stack the cards vertically */
-    align-items: center; /* Center the cards */
-    gap: 20px;
-    width: 100%; /* Ensure container spans full screen width */
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align the cards */
   }
 
   .payout-card {
-    width: 90%; /* Make cards take most of the screen width */
-    max-width: 350px; /* Restrict max width to avoid oversized cards */
+    width: 75%; /* Stretch cards to 75% of the screen width */
+    max-width: 500px; /* Add a cap for larger mobile screens */
   }
 }
 
