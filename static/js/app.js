@@ -138,37 +138,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const payoutsWrapper = document.querySelector(".payouts-wrapper");
-    const dots = document.querySelectorAll(".carousel-dots span");
-    let currentIndex = 0;
-
-    function autoSwipe() {
-      currentIndex = (currentIndex + 1) % dots.length; // Loop through the slides
-      updateCarousel();
-    }
-
-    function updateCarousel() {
-      const cardWidth = document.querySelector(".payout-card").offsetWidth + 20; // Include gap
-      payoutsWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-
-      // Update dots
-      dots.forEach(dot => dot.classList.remove("active"));
-      dots[currentIndex].classList.add("active");
-    }
-
-    // Set interval for automatic swipe
-    const swipeInterval = setInterval(autoSwipe, 3000);
-
-    // Add event listener for dots (optional for manual interaction)
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        clearInterval(swipeInterval); // Pause auto swipe on manual interaction
-        currentIndex = index;
-        updateCarousel();
-      });
-    });
-  });
-</script>
 
