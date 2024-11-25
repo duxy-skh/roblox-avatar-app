@@ -138,3 +138,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const payoutsContainer = document.querySelector(".payouts-container");
+  const scrollInterval = 3000; // Time interval between scrolls (ms)
+  const cardWidth = payoutsContainer.querySelector(".payout-card").offsetWidth + 20; // Card width + gap (20px)
+
+  let scrollPosition = 0;
+
+  function autoScroll() {
+    // Scroll by the width of one card
+    payoutsContainer.scrollBy({
+      left: cardWidth,
+      behavior: "smooth",
+    });
+
+    scrollPosition += cardWidth;
+
+    // If the scroll position exceeds the container's scroll width, reset
+    if (scrollPosition >= payoutsContainer.scrollWidth - payoutsContainer.offsetWidth) {
+      scrollPosition = 0; // Reset scroll position
+      payoutsContainer.scrollTo({ left: 0, behavior: "smooth" }); // Reset to the start
+    }
+  }
+
+  // Start auto-scrolling
+  setInterval(autoScroll, scrollInterval);
+});
