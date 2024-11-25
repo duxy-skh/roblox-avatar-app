@@ -138,3 +138,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const payoutsContainer = document.querySelector('.payouts-container');
+  const scrollAmount = 300; // Amount to scroll each time
+  const scrollInterval = 3000; // Time interval between scrolls (in milliseconds)
+
+  let scrollPosition = 0; // Track the current scroll position
+
+  function autoScroll() {
+    // Scroll by the defined amount
+    payoutsContainer.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth',
+    });
+
+    // Update scroll position
+    scrollPosition += scrollAmount;
+
+    // Reset scroll when reaching the end
+    if (scrollPosition >= payoutsContainer.scrollWidth - payoutsContainer.clientWidth) {
+      scrollPosition = 0; // Reset position
+      payoutsContainer.scrollTo({ left: 0, behavior: 'smooth' }); // Reset scroll
+    }
+  }
+
+  // Start the automatic scrolling
+  setInterval(autoScroll, scrollInterval);
+});
+
