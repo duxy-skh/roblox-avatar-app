@@ -644,7 +644,8 @@ button:hover {
         width: 90%; /* Slightly narrower on smaller screens */
         max-width: 90%; /* Override max width for smaller devices */
     }
-/* Recent Payouts Section */
+
+    /* Recent Payouts Section */
 #recent-payouts {
   margin: 50px auto;
   padding: 20px;
@@ -713,6 +714,7 @@ button:hover {
     max-width: 350px; /* Restrict max width to avoid oversized cards */
   }
 }
+
     
 /* Footer */
 footer {
