@@ -35,14 +35,14 @@ nav .menu li a::after {
     bottom: -3px; /* Position below the text */
     left: 0;
     width: 0; /* Start with no width */
-    height: 2px; /* Thickness of the underline */
+    height: 3px; /* Thickness of the underline */
     background-color: #383B3D; /* Match the text color */
     transition: width 0.0s ease; /* Smooth animation for the underline */
 }
 
 /* Hover effect to grow the underline */
 nav .menu li a:hover::after {
-    width: 100%; /* Full width on hover */
+    width: 125%; /* Full width on hover */
 }
 
 
