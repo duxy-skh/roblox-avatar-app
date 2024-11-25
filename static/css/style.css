@@ -701,9 +701,11 @@ button:hover {
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .payouts-container {
+    display: flex;
     flex-direction: column; /* Stack the cards vertically */
     align-items: center; /* Center the cards */
     gap: 20px;
+    width: 100%; /* Ensure container spans full screen width */
   }
 
   .payout-card {
