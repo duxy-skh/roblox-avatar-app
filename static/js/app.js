@@ -138,29 +138,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const payoutsContainer = document.querySelector(".payouts-container");
-  const scrollInterval = 3000; // Time interval between scrolls (ms)
-  const cardWidth = payoutsContainer.querySelector(".payout-card").offsetWidth + 20; // Card width + gap (20px)
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const payoutsWrapper = document.querySelector(".payouts-wrapper");
+    const dots = document.querySelectorAll(".carousel-dots span");
+    let currentIndex = 0;
 
-  let scrollPosition = 0;
-
-  function autoScroll() {
-    // Scroll by the width of one card
-    payoutsContainer.scrollBy({
-      left: cardWidth,
-      behavior: "smooth",
-    });
-
-    scrollPosition += cardWidth;
-
-    // If the scroll position exceeds the container's scroll width, reset
-    if (scrollPosition >= payoutsContainer.scrollWidth - payoutsContainer.offsetWidth) {
-      scrollPosition = 0; // Reset scroll position
-      payoutsContainer.scrollTo({ left: 0, behavior: "smooth" }); // Reset to the start
+    function autoSwipe() {
+      currentIndex = (currentIndex + 1) % dots.length; // Loop through the slides
+      updateCarousel();
     }
-  }
 
-  // Start auto-scrolling
-  setInterval(autoScroll, scrollInterval);
-});
+    function updateCarousel() {
+      const cardWidth = document.querySelector(".payout-card").offsetWidth + 20; // Include gap
+      payoutsWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+      // Update dots
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[currentIndex].classList.add("active");
+    }
+
+    // Set interval for automatic swipe
+    const swipeInterval = setInterval(autoSwipe, 3000);
+
+    // Add event listener for dots (optional for manual interaction)
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        clearInterval(swipeInterval); // Pause auto swipe on manual interaction
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+  });
+</script>
+
