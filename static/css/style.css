@@ -645,59 +645,119 @@ button:hover {
         max-width: 90%; /* Override max width for smaller devices */
     }
 
-}/* Recent Payouts Section */
+    /* Container Styles (General) */
 #recent-payouts {
-  margin: 50px auto;
+  background-color: #f1f4f5;
   padding: 20px;
-  background-color: #F1F4F5;
-  border-radius: 10px;
+  margin: 50px auto;
+  width: 100%;
+  max-width: 1200px; /* Constrained for larger screens */
   text-align: center;
-  max-width: 1200px;
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Title Styles */
 #recent-payouts .section-title {
   font-size: 24px;
   font-weight: bold;
-  color: #383B3D;
+  color: #383b3d;
   margin-bottom: 30px;
 }
 
+/* Payout Cards Layout */
 .payouts-container {
   display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
-  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows cards to wrap into rows */
+  gap: 20px; /* Even spacing between cards */
 }
 
+/* Card Styles */
 .payout-card {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 10px;
-  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
-  width: 300px; /* Fixed width for each card */
+  width: calc(33.333% - 20px); /* Fit 3 cards per row */
+  transition: transform 0.3s ease; /* Optional hover effect */
 }
 
+.payout-card:hover {
+  transform: translateY(-5px); /* Slight elevation on hover */
+}
+
+/* Avatar Styles */
 .payout-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin-bottom: 15px;
-  border: 3px solid #DEE1E3;
+  border: 3px solid #dee1e3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Username Styles */
 .payout-username {
   font-size: 18px;
   font-weight: bold;
-  color: #383B3D;
+  color: #383b3d;
   margin: 10px 0;
 }
 
+/* Amount Styles */
 .payout-amount {
   font-size: 16px;
-  color: #383B3D;
+  color: #555;
 }
+
+/* Responsive Styles for Medium Screens (Tablets) */
+@media (max-width: 991px) {
+  #recent-payouts {
+    padding: 15px;
+  }
+
+  .payouts-container {
+    justify-content: center; /* Center-align cards */
+  }
+
+  .payout-card {
+    width: calc(50% - 20px); /* Fit 2 cards per row */
+  }
+}
+
+/* Responsive Styles for Small Screens (Phones) */
+@media (max-width: 767px) {
+  #recent-payouts {
+    margin: 30px auto;
+    padding: 10px;
+  }
+
+  .payouts-container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .payout-card {
+    width: 75%; /* Occupy 75% of the screen width */
+    margin: 0 auto; /* Center-align the cards */
+  }
+
+  .payout-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .payout-username {
+    font-size: 16px;
+  }
+
+  .payout-amount {
+    font-size: 14px;
+  }
+}
+
     
 /* Footer */
 footer {
