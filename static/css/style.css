@@ -714,27 +714,27 @@ button:hover {
 
 .payouts-container {
     display: flex;
-    gap: 20px; /* Space between cards */
+    gap: 20px;
     transition: transform 0.5s ease-in-out; /* Smooth swipe transition */
-    will-change: transform;
+    width: fit-content;
+    transform: translateX(0); /* Initial position */
 }
 
-/* Payout Card Styling */
 .payout-card {
-    flex: 0 0 auto; /* Prevent shrinking or growing */
-    width: 80%; /* Adjust card width */
-    max-width: 300px; /* Maximum width of cards */
     background-color: #FFFFFF;
     border-radius: 10px;
+    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 20px;
+    flex: 0 0 80%; /* Allow flexibility for centering */
+    max-width: 300px;
+    margin: auto;
 }
 
-/* Responsive Design for Smaller Screens */
+/* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
     .payouts-container {
-        overflow: hidden; /* Ensure the container hides out-of-view cards */
+        width: 300%; /* Allow swipe for three cards */
     }
 }
 
