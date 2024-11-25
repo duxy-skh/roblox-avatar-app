@@ -645,7 +645,7 @@ button:hover {
         max-width: 90%; /* Override max width for smaller devices */
     }
 
-/* Existing Large Screen Styles (unchanged) */
+}/* Recent Payouts Section */
 #recent-payouts {
   margin: 50px auto;
   padding: 20px;
@@ -697,39 +697,6 @@ button:hover {
 .payout-amount {
   font-size: 16px;
   color: #383B3D;
-}
-
-/* New Styles for Smaller Screens */
-@media (max-width: 768px) {
-  #recent-payouts {
-    margin: 30px auto;
-    padding: 15px;
-  }
-
-  .payouts-container {
-    display: flex;
-    flex-direction: column; /* Stack the cards vertically */
-    align-items: center; /* Center align the stacked cards */
-    gap: 20px;
-  }
-
-  .payout-card {
-    width: 75%; /* Stretch to 75% of the screen width */
-    max-width: 350px; /* Restrict the maximum width */
-  }
-
-  .payout-avatar {
-    width: 70px;
-    height: 70px;
-  }
-
-  .payout-username {
-    font-size: 16px;
-  }
-
-  .payout-amount {
-    font-size: 14px;
-  }
 }
     
 /* Footer */
