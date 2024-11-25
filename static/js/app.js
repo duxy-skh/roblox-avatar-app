@@ -137,3 +137,25 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('active');
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const payoutsContainer = document.querySelector('.payouts-container');
+    let currentIndex = 0;
+
+    // Automatic swipe functionality
+    function autoSwipe() {
+        const totalCards = payoutsContainer.children.length;
+        const cardWidth = payoutsContainer.children[0].offsetWidth + 20; // Card width + gap
+
+        // Calculate the next position
+        currentIndex = (currentIndex + 1) % totalCards;
+        const offset = -currentIndex * cardWidth;
+
+        // Apply translation
+        payoutsContainer.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Trigger auto swipe every 3 seconds
+    setInterval(autoSwipe, 3000);
+});
+
