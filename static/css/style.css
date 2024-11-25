@@ -644,7 +644,7 @@ button:hover {
         width: 90%; /* Slightly narrower on smaller screens */
         max-width: 90%; /* Override max width for smaller devices */
     }
-}/* Recent Payouts Section */
+/* Recent Payouts Section */
 #recent-payouts {
   margin: 50px auto;
   padding: 20px;
@@ -698,9 +698,20 @@ button:hover {
   color: #383B3D;
 }
 
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .payouts-container {
+    flex-direction: column; /* Stack the cards vertically */
+    align-items: center; /* Center the cards */
+    gap: 20px;
+  }
 
-
-
+  .payout-card {
+    width: 90%; /* Make cards take most of the screen width */
+    max-width: 350px; /* Restrict max width to avoid oversized cards */
+  }
+}
+    
 /* Footer */
 footer {
     text-align: center;
