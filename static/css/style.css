@@ -700,6 +700,42 @@ button:hover {
   color: #383B3D;
 }
 
+/* Adjust container for swipeable feature */
+.payouts-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to each card when scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scroll-behavior: smooth; /* Smooth automatic scrolling */
+}
+
+.payout-card {
+  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+  width: 300px; /* Fixed width for each card */
+  scroll-snap-align: start; /* Snap to the start of each card */
+}
+
+.payout-container::-webkit-scrollbar {
+  display: none; /* Hide default scrollbar */
+}
+
+/* Add padding for a better touch experience */
+.payouts-container {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Responsive design: Adjust width for smaller screens */
+@media (max-width: 768px) {
+  .payouts-container {
+    gap: 15px; /* Reduce gap for smaller screens */
+  }
+
+  .payout-card {
+    width: 250px; /* Smaller cards on smaller screens */
+  }
+}
+
 /* Footer */
 footer {
     text-align: center;
