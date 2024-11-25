@@ -140,22 +140,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const payoutsContainer = document.querySelector('.payouts-container');
+    const payoutsSection = document.querySelector('#recent-payouts');
+    const cards = payoutsContainer.children;
+    const totalCards = cards.length;
     let currentIndex = 0;
 
-    // Automatic swipe functionality
     function autoSwipe() {
-        const totalCards = payoutsContainer.children.length;
-        const cardWidth = payoutsContainer.children[0].offsetWidth + 20; // Card width + gap
+        // Calculate the visible area width
+        const visibleWidth = payoutsSection.offsetWidth;
 
-        // Calculate the next position
-        currentIndex = (currentIndex + 1) % totalCards;
-        const offset = -currentIndex * cardWidth;
+        // Calculate the offset to center the current card
+        const cardWidth = cards[0].offsetWidth + 20; // Card width + gap
+        const offset = -(currentIndex * cardWidth - (visibleWidth - cardWidth) / 2);
 
         // Apply translation
         payoutsContainer.style.transform = `translateX(${offset}px)`;
+
+        // Move to the next card, looping back to the start
+        currentIndex = (currentIndex + 1) % totalCards;
     }
 
     // Trigger auto swipe every 3 seconds
     setInterval(autoSwipe, 3000);
 });
+
 
