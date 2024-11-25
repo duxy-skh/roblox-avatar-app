@@ -726,8 +726,9 @@ button:hover {
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 0 0 calc(100% - 40px); /* Full width on smaller screens */
-    max-width: 300px; /* Limit card width on larger screens */
+    flex: 0 0 80%; /* Allow flexibility for centering */
+    max-width: 300px;
+    margin: auto;
 }
 
 /* Media Queries for Smaller Screens */
