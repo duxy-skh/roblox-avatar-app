@@ -140,28 +140,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const payoutsContainer = document.querySelector('.payouts-container');
-    const payoutsSection = document.querySelector('#recent-payouts');
-    const cards = payoutsContainer.children;
-    const totalCards = cards.length;
+    const payoutsCards = document.querySelectorAll('.payout-card');
     let currentIndex = 0;
 
-    function autoSwipe() {
-        // Calculate the visible area width
-        const visibleWidth = payoutsSection.offsetWidth;
+    function centerCard() {
+        const cardWidth = payoutsCards[0].offsetWidth;
+        const gap = 20; // Gap between cards (defined in CSS)
+        const offset = -(currentIndex * (cardWidth + gap)); // Calculate the offset
 
-        // Calculate the offset to center the current card
-        const cardWidth = cards[0].offsetWidth + 20; // Card width + gap
-        const offset = -(currentIndex * cardWidth - (visibleWidth - cardWidth) / 2);
-
-        // Apply translation
         payoutsContainer.style.transform = `translateX(${offset}px)`;
-
-        // Move to the next card, looping back to the start
-        currentIndex = (currentIndex + 1) % totalCards;
+        payoutsContainer.style.transition = 'transform 0.5s ease-in-out'; // Smooth animation
     }
 
-    // Trigger auto swipe every 3 seconds
-    setInterval(autoSwipe, 3000);
+    function autoSwipe() {
+        currentIndex = (currentIndex + 1) % payoutsCards.length; // Cycle through cards
+        centerCard();
+    }
+
+    // Start auto swipe for smaller screens
+    if (window.innerWidth <= 768) {
+        setInterval(autoSwipe, 3000); // Swipe every 3 seconds
+    }
 });
+
 
 
