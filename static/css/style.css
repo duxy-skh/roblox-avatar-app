@@ -648,7 +648,7 @@ button:hover {
 
 /* Recent Payouts Section */
 #recent-payouts {
-  margin: 40px 0; /* Spacing around the section */
+  margin: 40px 0; /* Add spacing around the section */
   text-align: center;
 }
 
@@ -659,29 +659,23 @@ button:hover {
   color: #383B3D; /* Match your site's color scheme */
 }
 
-/* Payouts Carousel Container */
+/* Payouts Container */
 .payouts-container {
-  position: relative;
-  overflow: hidden; /* Hide overflow for smooth sliding */
-  width: 100%; /* Full width of the container */
-  max-width: 1200px; /* Optional: restrict the max width */
-  margin: 0 auto; /* Center the container */
-}
-
-/* Payouts Items Wrapper */
-.payouts-wrapper {
   display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
-  width: fit-content; /* Adjust width to content for smooth scrolling */
+  gap: 20px; /* Space between payout cards */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Enable smooth scrolling for swipe functionality */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+  padding: 10px 0; /* Optional: Add vertical padding for spacing */
 }
 
 /* Payout Cards */
 .payout-card {
-  flex: 0 0 250px; /* Fixed card width for consistent layout */
+  flex: 0 0 auto; /* Prevent cards from shrinking/growing */
+  width: 250px; /* Fixed width for each card */
   background-color: #FFFFFF; /* Card background */
   border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
   padding: 20px; /* Internal padding */
   text-align: center;
 }
@@ -709,35 +703,24 @@ button:hover {
   color: #70757A; /* Subtle text color */
 }
 
-/* Dots Indicator for Auto Swipe */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  gap: 8px;
-}
-
-.carousel-dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #C4C4C4; /* Inactive dot color */
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.carousel-dots span.active {
-  background-color: #383B3D; /* Active dot color */
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .payout-card {
-    flex: 0 0 200px; /* Adjust card width for smaller screens */
+    width: 200px; /* Adjust card width for smaller screens */
   }
   #recent-payouts .section-title {
-    font-size: 20px; /* Smaller title for smaller screens */
+    font-size: 20px; /* Smaller title on small screens */
   }
+}
+
+/* Optional: Center Payout Cards When Scrolling Ends */
+.payouts-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better UX */
+}
+
+.payouts-container {
+  -ms-overflow-style: none; /* Hide scrollbar on Internet Explorer */
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
 }
 
 
