@@ -98,7 +98,7 @@ nav .menu li a {
     width: 25px;
     height: 18px;
     border: none;
-    background: none;
+    background: transparent;
     cursor: pointer;
     padding: 0;
 }
