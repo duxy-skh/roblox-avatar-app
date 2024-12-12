@@ -743,7 +743,8 @@ button:hover {
   font-weight: bold;
   color: #383b3d;
   text-align: center; /* Center-align the text */
-  margin: 0 auto; /* Center the title block */
+  margin: 0 auto 20px; /* Add 20px of space below the title */
+  padding: 0; /* Optional: Reset any unwanted padding */
 }
 
 /* Payout Cards Layout */
