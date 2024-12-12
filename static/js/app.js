@@ -185,11 +185,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-window.addEventListener('resize', () => {
-    const newCardWidth = track.getBoundingClientRect().width;
-    track.style.transition = 'none';
-    track.style.transform = `translateX(-${currentIndex * newCardWidth}px)`;
+    window.addEventListener('resize', () => {
+        const newCardWidth = track.getBoundingClientRect().width;
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${currentIndex * newCardWidth}px)`;
+    });
 });
+
 
 
 
