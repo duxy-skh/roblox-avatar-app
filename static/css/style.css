@@ -746,7 +746,7 @@ button:hover {
 /* Payout Cards Layout */
 .payouts-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* Center the cards */
   flex-wrap: wrap; /* Allows cards to wrap into rows */
   gap: 20px; /* Even spacing between cards */
 }
@@ -758,7 +758,7 @@ button:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  width: calc(33.333% - 20px); /* Fit 3 cards per row */
+  width: calc(50% - 20px); /* Two cards per row with spacing */
   transition: transform 0.3s ease; /* Optional hover effect */
 }
 
@@ -803,7 +803,7 @@ button:hover {
   }
 
   .payout-card {
-    width: 100%; /* Occupy 75% of the screen width */
+    width: 75%; /* Occupy 75% of the screen width */
     margin: 0 auto; /* Center-align the cards */
   }
 
