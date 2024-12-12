@@ -138,5 +138,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    const cards = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    const cardWidth = cards[0].getBoundingClientRect().width;
+
+    let currentIndex = 0;
+
+    const updateCarousel = () => {
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    };
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        const newCardWidth = cards[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * newCardWidth}px)`;
+    });
+});
 
 
