@@ -143,9 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = Array.from(track.children);
     const nextButton = document.querySelector('.next');
     const prevButton = document.querySelector('.prev');
-    const cardWidth = cards[0].getBoundingClientRect().width;
+    const cardWidth = track.getBoundingClientRect().width;
 
-    let currentIndex = 0;
+    let currentIndex = 1;
 
     // Clone first and last cards for infinite looping
     const firstClone = cards[0].cloneNode(true);
@@ -154,57 +154,44 @@ document.addEventListener('DOMContentLoaded', () => {
     track.appendChild(firstClone);
     track.insertBefore(lastClone, cards[0]);
 
+    // Set initial position
     track.style.transform = `translateX(-${cardWidth}px)`;
 
-    // Update currentIndex and animate
     const updateCarousel = () => {
-        track.style.transition = "transform 0.5s ease-in-out";
-        track.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
+        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     };
 
-    // Handle next button click
     nextButton.addEventListener('click', () => {
-        if (currentIndex >= cards.length - 1) {
-            currentIndex = -1; // Reset to first card
-            track.style.transition = "none";
-            track.style.transform = `translateX(0px)`;
-        }
-
         currentIndex++;
         updateCarousel();
     });
 
-    // Handle prev button click
     prevButton.addEventListener('click', () => {
-        if (currentIndex <= 0) {
-            currentIndex = cards.length;
-            track.style.transition = "none";
-            track.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
-        }
-
         currentIndex--;
         updateCarousel();
     });
 
-    // Reset transition after looping
     track.addEventListener('transitionend', () => {
-        if (currentIndex === -1) {
-            track.style.transition = "none";
-            currentIndex = cards.length - 1;
-            track.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
-        } else if (currentIndex === cards.length) {
-            track.style.transition = "none";
-            currentIndex = 0;
+        if (currentIndex === 0) {
+            track.style.transition = 'none';
+            currentIndex = cards.length;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+        if (currentIndex === cards.length + 1) {
+            track.style.transition = 'none';
+            currentIndex = 1;
             track.style.transform = `translateX(-${cardWidth}px)`;
         }
     });
 
-    // Resize handling
     window.addEventListener('resize', () => {
-        const newCardWidth = cards[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${(currentIndex + 1) * newCardWidth}px)`;
+        const newCardWidth = track.getBoundingClientRect().width;
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${currentIndex * newCardWidth}px)`;
     });
 });
+
 
 
 
