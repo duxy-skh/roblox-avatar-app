@@ -803,7 +803,7 @@ button:hover {
   }
 
   .payout-card {
-    width: 75%; /* Occupy 75% of the screen width */
+    width: 100%; /* Occupy 75% of the screen width */
     margin: 0 auto; /* Center-align the cards */
   }
 
