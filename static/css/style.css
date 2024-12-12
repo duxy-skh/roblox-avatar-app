@@ -739,14 +739,17 @@ button:hover {
 
 /* Title Styles */
 #recent-payouts .section-title {
-    text-align: center; /* Center-align the text */
-    margin: 0 auto; /* Center the title block */
+  font-size: 24px;
+  font-weight: bold;
+  color: #383b3d;
+  text-align: center; /* Center-align the text */
+  margin: 0 auto; /* Center the title block */
 }
 
 /* Payout Cards Layout */
 .payouts-container {
   display: flex;
-  justify-content: space-around; /* Center the cards */
+  justify-content: space-between;
   flex-wrap: wrap; /* Allows cards to wrap into rows */
   gap: 20px; /* Even spacing between cards */
 }
@@ -758,7 +761,7 @@ button:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  width: calc(50% - 20px); /* Two cards per row with spacing */
+  width: calc(33.333% - 20px); /* Fit 3 cards per row */
   transition: transform 0.3s ease; /* Optional hover effect */
 }
 
