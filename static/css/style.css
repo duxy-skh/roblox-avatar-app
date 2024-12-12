@@ -149,7 +149,7 @@ nav .menu li a {
 
 /* Burger Menu Button (hidden by default for large screens) */
 .burger-menu {
-    display: flex; /* Ensure visibility on smaller screens */
+    display: none; /* Only visible on smaller screens */
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
@@ -157,8 +157,7 @@ nav .menu li a {
     border: none;
     background: transparent;
     cursor: pointer;
-    margin: 0; /* Remove unnecessary margins */
-    padding: 0; /* Ensure no extra padding */
+    padding: 0;
 }
 
 .burger-menu span {
@@ -172,19 +171,19 @@ nav .menu li a {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-nav .menu {
-    display: none; /* Hide menu by default */
-    flex-direction: column;
-    position: absolute;
-    top: 60px; /* Aligns below navbar */
-    right: 20px; /* Aligns to the right edge */
-    left: 20px; /* Added to ensure consistent centering */
-    background-color: #DEE1E3;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: calc(100% - 40px); /* Ensure consistent padding */
-    padding: 15px 0;
-}
+    nav .menu {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below the navbar */
+        right: 0; /* Flush with the screen on the right */
+        left: 0; /* Flush with the screen on the left */
+        background-color: #DEE1E3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0; /* No rounded corners */
+        width: 100%; /* Full width */
+        padding: 15px 0;
+    }
 
     nav .menu.active {
         display: flex; /* Show menu when burger menu is clicked */
@@ -200,7 +199,9 @@ nav .menu {
 }
 
     .burger-menu {
-        display: flex; /* Show burger menu */
+        display: flex; /* Show the burger menu */
+        margin: 0; /* Remove unwanted gaps */
+        padding: 0; /* Remove padding */
     }
 
     .burger-menu.active span:nth-child(1) {
