@@ -55,16 +55,24 @@
 }
 
 
+/* Reset margins and paddings for the body and html */
+html, body {
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default paddings */
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling caused by overflow */
+}
+
 /* General Styles */
 body {
     font-family: "Builder Sans", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #F1F4F5;
     color: #383B3D;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0; /* Remove extra spacing */
+    padding: 0; /* Remove extra spacing */
 }
 
 /* Navigation Bar */
@@ -221,18 +229,17 @@ nav .menu li a {
 #banner {
     position: relative;
     text-align: center;
-    width: 70%; /* Reduced width to make it smaller */
-    margin: 20px auto;
+    width: 100%; /* Ensures the banner spans the full width */
+    margin: 0; /* Removes unnecessary margins */
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0; /* Remove rounding for full-width banners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #banner img {
-    width: 100%;
+    width: 100%; /* Make the image span the full width */
     height: auto;
     object-fit: cover;
-    max-height: 125px; /* Reduced max height for a smaller banner */
 }
 
 .banner-text {
@@ -648,21 +655,28 @@ button:hover {
     }/* Recent Payouts Section */
 #recent-payouts {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
+    width: 100%; /* Ensures full width of the viewport */
+    margin: 0 auto; /* Center-align the carousel */
+    padding: 0; /* Remove unnecessary padding */
+    overflow: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Carousel Container */
 .carousel-container {
-    overflow: hidden;
+    width: 100%; /* Match the full width */
+    margin: 0; /* Remove extra spacing */
+    padding: 0; /* Remove extra spacing */
     position: relative;
 }
 
+/* Carousel Track */
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
     will-change: transform;
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+    width: 100%; /* Ensure it spans the parent container */
 }
 
 .carousel-card-wrapper {
@@ -705,11 +719,11 @@ button:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
-    color: #383b3d; /* Neutral color for icons */
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #383b3d;
     border: none;
     padding: 10px 15px;
-    border-radius: 50%; /* Rounded buttons */
+    border-radius: 50%;
     cursor: pointer;
     z-index: 1;
     font-size: 20px;
@@ -718,8 +732,8 @@ button:hover {
 
 /* Add hover effect to enhance user experience */
 .carousel-button:hover {
-    background-color: rgba(255, 255, 255, 0.6); /* Slightly less transparent on hover */
-    transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .prev {
@@ -730,10 +744,14 @@ button:hover {
     right: 10px;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
+/* Responsive Fix for Smaller Screens */
+@media (max-width: 768px) {
+    #recent-payouts {
+        padding: 0; /* Ensure no padding for mobile screens */
+    }
+
     .carousel-card-wrapper {
-        flex: 0 0 33.33%; /* Show three cards on larger screens */
+        padding: 0; /* Remove unnecessary padding on cards */
     }
 }
 
