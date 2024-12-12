@@ -650,12 +650,12 @@ button:hover {
     position: relative;
     width: 80%;
     margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
+    overflow: hidden; /* Ensures only one card is visible */
 }
 
 .carousel-container {
-    overflow: hidden;
+    overflow: hidden; /* Restrict the visible area */
+    position: relative;
 }
 
 .carousel-track {
@@ -664,7 +664,7 @@ button:hover {
 }
 
 .carousel-card-wrapper {
-    flex: 0 0 100%;
+    flex: 0 0 100%; /* Each card takes up 100% of the carousel width */
     box-sizing: border-box;
     padding: 10px;
     text-align: center;
