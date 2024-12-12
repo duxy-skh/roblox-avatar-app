@@ -71,8 +71,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0; /* Remove extra spacing */
-    padding: 0; /* Remove extra spacing */
 }
 
 /* Navigation Bar */
@@ -230,14 +228,14 @@ nav .menu li a {
     position: relative;
     text-align: center;
     width: 100%; /* Ensures the banner spans the full width */
-    margin: 0; /* Removes unnecessary margins */
+    margin: 0 auto;
     overflow: hidden;
-    border-radius: 0; /* Remove rounding for full-width banners */
+    border-radius: 0; /* Ensure no rounding on banners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #banner img {
-    width: 100%; /* Make the image span the full width */
+    width: 100%;
     height: auto;
     object-fit: cover;
 }
@@ -655,17 +653,18 @@ button:hover {
     }/* Recent Payouts Section */
 #recent-payouts {
     position: relative;
-    width: 100%; /* Ensures full width of the viewport */
-    margin: 0 auto; /* Center-align the carousel */
-    padding: 0; /* Remove unnecessary padding */
+    width: 100%;
+    max-width: 1200px; /* Restrict the width for desktop */
+    margin: 0 auto; /* Center-align on desktop */
+    padding: 0 20px; /* Add padding for desktop views */
     overflow: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Carousel Container */
 .carousel-container {
     width: 100%; /* Match the full width */
-    margin: 0; /* Remove extra spacing */
-    padding: 0; /* Remove extra spacing */
+    margin: 0;
+    padding: 0;
     position: relative;
 }
 
@@ -674,8 +673,8 @@ button:hover {
     display: flex;
     transition: transform 0.5s ease-in-out;
     will-change: transform;
-    margin: 0; /* Remove any default margins */
-    padding: 0; /* Remove any default padding */
+    margin: 0;
+    padding: 0;
     width: 100%; /* Ensure it spans the parent container */
 }
 
@@ -744,14 +743,37 @@ button:hover {
     right: 10px;
 }
 
+/* Cards in the Carousel */
+.carousel-card-wrapper {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding: 10px; /* Add some spacing between cards */
+}
+
+.payout-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+}
+
 /* Responsive Fix for Smaller Screens */
 @media (max-width: 768px) {
     #recent-payouts {
-        padding: 0; /* Ensure no padding for mobile screens */
+        padding: 0; /* Remove desktop-specific padding */
+        max-width: 100%; /* Allow full-width on mobile */
     }
 
     .carousel-card-wrapper {
-        padding: 0; /* Remove unnecessary padding on cards */
+        padding: 0; /* Remove unnecessary padding */
+    }
+
+    .payout-card {
+        width: 90%; /* Slightly narrower for mobile screens */
     }
 }
 
