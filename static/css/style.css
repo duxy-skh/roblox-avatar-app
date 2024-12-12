@@ -53,6 +53,17 @@
     font-weight: 800; /* ExtraBold */
     font-style: normal;
 }
+#banner,
+#input-section,
+#recent-payouts {
+    margin-bottom: 30px; /* Add uniform spacing between sections */
+}
+
+.common-width {
+    width: 80%; /* Adjust this percentage as needed */
+    max-width: 800px; /* Set a maximum width */
+    margin: 0 auto; /* Center-align the element */
+}
 
 
 /* General Styles */
@@ -221,7 +232,8 @@ nav .menu li a {
 #banner {
     position: relative;
     text-align: center;
-    width: 70%; /* Reduced width to make it smaller */
+    width: 80%;
+    max-width: 800px;
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -273,12 +285,13 @@ nav .menu li a {
 
 /* Input Section */
 #input-section {
-    margin: 0 auto;
     padding: 20px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 400px;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
     text-align: center;
     width: 100%;
 }
@@ -648,9 +661,9 @@ button:hover {
     }/* Recent Payouts Section */
 #recent-payouts {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
     overflow: hidden;
 }
 
