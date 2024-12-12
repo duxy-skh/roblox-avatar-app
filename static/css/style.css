@@ -172,18 +172,19 @@ nav .menu li a {
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     nav .menu {
-        display: none; /* Hide menu by default */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Aligns below navbar */
-        right: 20px; /* Aligns to the right edge */
-        left: 20px; /* Added to ensure consistent centering */
+        top: 60px;
+        right: 0; /* Adjust to align with screen */
+        left: 0; /* Align to the screen edge */
         background-color: #DEE1E3;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        width: calc(100% - 40px); /* Ensure consistent padding */
+        border-radius: 0; /* Remove rounded corners if present */
+        width: 100%; /* Take up the full width of the screen */
         padding: 15px 0;
     }
+}
 
     nav .menu.active {
         display: flex; /* Show menu when burger menu is clicked */
@@ -199,8 +200,11 @@ nav .menu li a {
 }
 
     .burger-menu {
-        display: flex; /* Show burger menu */
-    }
+    display: flex;
+    position: relative; /* Ensure it aligns with the screen */
+    margin: 0; /* Remove any extra spacing */
+    padding: 0;
+}
 
     .burger-menu.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
