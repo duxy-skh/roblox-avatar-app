@@ -648,26 +648,28 @@ button:hover {
     }/* Recent Payouts Section */
 #recent-payouts {
     position: relative;
-    width: 80%;
+    width: 100%;
+    max-width: 600px;
     margin: auto;
-    overflow: hidden; /* Ensures only one card is visible */
+    overflow: hidden;
 }
 
 .carousel-container {
-    overflow: hidden; /* Restrict the visible area */
+    overflow: hidden;
     position: relative;
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .carousel-card-wrapper {
-    flex: 0 0 100%; /* Each card takes up 100% of the carousel width */
+    min-width: 100%;
     box-sizing: border-box;
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .payout-card {
@@ -676,6 +678,7 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    width: 80%;
 }
 
 .payout-avatar {
@@ -708,6 +711,7 @@ button:hover {
     padding: 10px;
     cursor: pointer;
     z-index: 1;
+    font-size: 20px;
 }
 
 .prev {
