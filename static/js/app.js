@@ -42,16 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (data.error) {
                         // Handle user not found
-                        avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
+                        avatarContainer.innerHTML = <p class="error">${data.error}</p>;
                         errorMessage.style.display = 'block'; // Show error message
                         successContent.style.display = 'none'; // Hide success content
                         avatarSection.style.display = 'block'; // Show avatar section
                         nextButton.style.display = 'none'; // Hide Next button
                     } else {
                         // Display avatar and success content
-                        avatarContainer.innerHTML = `
+                        avatarContainer.innerHTML = 
                             <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
-                        `;
+                        ;
                         avatarUsername.textContent = data.username;
                         errorMessage.style.display = 'none'; // Hide error message
                         successContent.style.display = 'block'; // Show success content
@@ -155,11 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
     track.insertBefore(lastClone, cards[0]);
 
     // Set initial position
-    track.style.transform = `translateX(-${cardWidth}px)`;
+    track.style.transform = translateX(-${cardWidth}px);
 
     const updateCarousel = () => {
         track.style.transition = 'transform 0.5s ease-in-out';
-        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        track.style.transform = translateX(-${currentIndex * cardWidth}px);
     };
 
     nextButton.addEventListener('click', () => {
@@ -176,19 +176,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentIndex === 0) {
             track.style.transition = 'none';
             currentIndex = cards.length;
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            track.style.transform = translateX(-${currentIndex * cardWidth}px);
         }
         if (currentIndex === cards.length + 1) {
             track.style.transition = 'none';
             currentIndex = 1;
-            track.style.transform = `translateX(-${cardWidth}px)`;
+            track.style.transform = translateX(-${cardWidth}px);
         }
     });
 
     window.addEventListener('resize', () => {
         const newCardWidth = track.getBoundingClientRect().width;
         track.style.transition = 'none';
-        track.style.transform = `translateX(-${currentIndex * newCardWidth}px)`;
+        track.style.transform = translateX(-${currentIndex * newCardWidth}px);
     });
 });
 
@@ -197,8 +197,3 @@ document.querySelectorAll(".back-button").forEach((button) => {
         window.location.href = "https://roblox-avatar-app.vercel.app/"; // Replace with your actual input page URL
     });
 });
-
-
-
-
-
