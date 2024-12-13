@@ -718,31 +718,29 @@ button:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
-    color: #383b3d; /* Neutral color for icons */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for visibility */
+    color: #FFFFFF; /* White color for the arrow icons */
     border: none;
-    padding: 10px 15px;
+    padding: 15px 20px; /* Increased padding for larger buttons */
     border-radius: 50%; /* Rounded buttons */
     cursor: pointer;
     z-index: 1;
-    font-size: 20px;
+    font-size: 24px; /* Larger font size for better visibility */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Add hover effect to enhance user experience */
 .carousel-button:hover {
-    background-color: rgba(255, 255, 255, 0.6); /* Slightly less transparent on hover */
-    transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly darker background on hover */
+    transform: translateY(-50%) scale(1.1); /* Add a slight zoom effect */
 }
 
 .prev {
-    left: 10px;
+    left: 15px; /* Adjust the left position */
 }
 
 .next {
-    right: 10px;
+    right: 15px; /* Adjust the right position */
 }
-
 /* Responsive Design */
 @media (min-width: 768px) {
     .carousel-card-wrapper {
