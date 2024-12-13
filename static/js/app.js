@@ -192,8 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.getElementById("back-button").addEventListener("click", function () {
-    window.location.href = "https://roblox-avatar-app.vercel.app/"; // Replace with the actual URL
+document.querySelectorAll(".back-button").forEach((button) => {
+    button.addEventListener("click", function () {
+        window.location.href = "https://roblox-avatar-app.vercel.app/"; // Replace with your actual input page URL
+    });
 });
 
 
