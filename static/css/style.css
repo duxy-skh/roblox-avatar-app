@@ -285,10 +285,6 @@ nav .menu li a {
 
 /* Input Section */
 #input-section {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center the input and button horizontally */
-    gap: 15px; /* Add space between the input field and button */
     padding: 20px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -301,6 +297,10 @@ nav .menu li a {
 }
 
 #input-section h2 {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center the input and button horizontally */
+    gap: 15px; /* Add space between the input field and button */
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -336,23 +336,20 @@ nav .menu li a {
 }
 
 /* Loading Animation */
-#loading-animation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1000; /* Ensure it appears above all content */
+#loading-section {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
 }
 
-#loading-animation img {
-    width: 80px; /* Adjust the size as needed */
-    height: 80px;
+.loader {
+    border: 8px solid #DEE1E3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     animation: spin 1s linear infinite;
+    margin: 20px auto;
 }
 
 @keyframes spin {
