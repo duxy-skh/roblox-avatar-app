@@ -77,7 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle Next Button
 nextButton.addEventListener('click', () => {
+    console.log('Next button clicked');
     if (selectedRobux) {
+        console.log('Selected Robux:', selectedRobux);
+
         // Show loading animation
         showLoadingAnimation();
 
@@ -87,6 +90,7 @@ nextButton.addEventListener('click', () => {
             hideLoadingAnimation();
             verificationSection.style.display = 'block';
 
+            // Update verification details
             document.getElementById('verification-username').textContent =
                 localStorage.getItem('username');
             document.getElementById('verification-robux').textContent =
@@ -96,6 +100,7 @@ nextButton.addEventListener('click', () => {
         alert('Please select a Robux amount!');
     }
 });
+
 
     // Handle Back Button
     backButton.addEventListener('click', () => {
