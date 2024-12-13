@@ -193,8 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById("back-button").addEventListener("click", function () {
-    window.history.back(); // Go to the previous page
+    window.location.href = "https://roblox-avatar-app.vercel.app/"; // Replace with the actual URL
 });
+
+
 
 
 
