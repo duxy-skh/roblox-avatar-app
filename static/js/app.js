@@ -192,6 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.getElementById("back-button").addEventListener("click", function () {
+    window.history.back(); // Go to the previous page
+});
 
 
 
