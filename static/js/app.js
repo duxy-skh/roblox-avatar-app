@@ -15,50 +15,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Fetch Button Click
     fetchButton.addEventListener('click', () => {
-    const username = document.getElementById('username').value.trim();
+        const username = document.getElementById('username').value.trim();
 
-    if (!username) {
-        alert('Please enter a username.');
-        return;
-    }
+        if (!username) {
+            alert('Please enter a username.');
+            return;
+        }
 
-    // Show loading animation
-    showLoadingAnimation();
+        // Show loading section, hide input section
+        inputSection.style.display = 'none';
+        loadingSection.style.display = 'block';
 
-    // Simulate API call
-    setTimeout(() => {
-        fetch('/api/avatar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username }),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                // Hide loading animation
-                hideLoadingAnimation();
-
-                if (data.error) {
-                    avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
-                    errorMessage.style.display = 'block';
-                } else {
-                    avatarContainer.innerHTML = `
-                        <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
-                    `;
-                    avatarUsername.textContent = data.username;
-                    successContent.style.display = 'block';
-                }
-                avatarSection.style.display = 'block';
+        // Simulate API call
+        setTimeout(() => {
+            fetch('/api/avatar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username }),
             })
-            .catch((error) => {
-                console.error('Fetch error:', error);
-                hideLoadingAnimation();
-                avatarContainer.innerHTML = '<p class="error">An unexpected error occurred. Please try again.</p>';
-            });
-    }, 3000); // Simulated delay
-});
+                .then((response) => response.json())
+                .then((data) => {
+                    // Hide loading section
+                    loadingSection.style.display = 'none';
 
+                    if (data.error) {
+                        // Handle user not found
+                        avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
+                        errorMessage.style.display = 'block'; // Show error message
+                        successContent.style.display = 'none'; // Hide success content
+                        avatarSection.style.display = 'block'; // Show avatar section
+                        nextButton.style.display = 'none'; // Hide Next button
+                    } else {
+                        // Display avatar and success content
+                        avatarContainer.innerHTML = `
+                            <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
+                        `;
+                        avatarUsername.textContent = data.username;
+                        errorMessage.style.display = 'none'; // Hide error message
+                        successContent.style.display = 'block'; // Show success content
+                        avatarSection.style.display = 'block'; // Show avatar section
+                        nextButton.style.display = 'inline-block'; // Show Next button
+                        localStorage.setItem('username', data.username); // Save username
+                    }
+                })
+                .catch((error) => {
+                    console.error('Fetch error:', error);
+                    loadingSection.style.display = 'none';
+
+                    // Show unexpected error
+                    avatarContainer.innerHTML = '<p class="error">An unexpected error occurred. Please try again.</p>';
+                    errorMessage.style.display = 'block'; // Show error message
+                    successContent.style.display = 'none'; // Hide success content
+                    avatarSection.style.display = 'block'; // Show avatar section
+                    nextButton.style.display = 'none'; // Hide Next button
+                });
+        }, 3000); // Simulated delay for loading
+    });
 
     // Handle Robux Selection
     document.querySelectorAll('.robux-button').forEach((button) => {
@@ -76,31 +90,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   // Handle Next Button
-nextButton.addEventListener('click', () => {
-    console.log('Next button clicked');
+nextButton.addEventListener('click', function () {
     if (selectedRobux) {
-        console.log('Selected Robux:', selectedRobux);
+        // Show the Robux loading section
+        avatarSection.style.display = 'none';
+        document.getElementById('robux-loading-section').style.display = 'block';
 
-        // Show loading animation
-        showLoadingAnimation();
-
-        // Simulate loading process
+        // Simulate loading for 3 seconds
         setTimeout(() => {
-            // Hide loading animation and proceed to the next step
-            hideLoadingAnimation();
+            // Hide the Robux loading section
+            document.getElementById('robux-loading-section').style.display = 'none';
+
+            // Show verification section
             verificationSection.style.display = 'block';
 
-            // Update verification details
+            // Populate verification details
             document.getElementById('verification-username').textContent =
                 localStorage.getItem('username');
             document.getElementById('verification-robux').textContent =
                 localStorage.getItem('selectedRobux');
-        }, 3000);
+            document
+                .getElementById('verification-avatar')
+                .setAttribute('src', avatarContainer.querySelector('img').getAttribute('src'));
+        }, 3000); // 3-second loading simulation
     } else {
         alert('Please select a Robux amount!');
     }
 });
-
 
     // Handle Back Button
     backButton.addEventListener('click', () => {
@@ -181,3 +197,8 @@ document.querySelectorAll(".back-button").forEach((button) => {
         window.location.href = "https://roblox-avatar-app.vercel.app/"; // Replace with your actual input page URL
     });
 });
+
+
+
+
+
