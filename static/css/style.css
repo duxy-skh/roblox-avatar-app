@@ -297,13 +297,18 @@ nav .menu li a {
 }
 
 #input-section h2 {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center the input and button horizontally */
+    gap: 15px; /* Add space between the input field and button */
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 #input-section input {
-    width: 40%;
+    width: 80%; /* Adjust input width as needed */
+    max-width: 400px;
     padding: 10px;
     font-size: 14px;
     margin-bottom: 15px;
@@ -314,6 +319,8 @@ nav .menu li a {
 }
 
 #input-section button {
+    width: auto; /* Keep the button's default width */
+    max-width: 200px; /* Optional: Set a maximum width for the button */
     background-color: #007bff;
     color: #FFFFFF;
     border: none;
