@@ -351,29 +351,25 @@ nav .menu li a {
 /* Folding Cube Loader Container */
 .folding {
   margin: 20px auto;
-  width: 100px;
-  height: 100px;
+  width: 100px; /* Loader size */
+  height: 100px; /* Loader size */
   position: relative;
-  transform: rotateZ(45deg);
+  transform: rotateZ(45deg); /* Slight diagonal tilt */
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.2s linear forwards; /* Fade in after a split-second delay */
+  animation-delay: 0.5s; /* Delay before animation starts */
 }
 
 /* Individual Cubes */
 .folding .sk-cube {
   position: absolute;
-  width: 50%;
+  width: 50%; /* Half the size of the container */
   height: 50%;
   transform: scale(1);
   opacity: 0; /* Initially hidden */
 }
 
-/* Show Only the First Cube Initially */
-.folding .sk-cube1 {
-  top: 0;
-  left: 0;
-  opacity: 1; /* Only the first cube is visible initially */
-}
-
-/* Animation for All Cubes */
+/* Show All Cubes After the Empty State */
 .folding .sk-cube:before {
   content: "";
   position: absolute;
@@ -381,11 +377,11 @@ nav .menu li a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000; /* Customize this color */
+  background-color: #007bff; /* Customize this color */
   animation: sk-foldCubeAngle 3s ease-in-out infinite; /* Duration set to 3s */
   animation-fill-mode: forwards; /* Ensures final state is held */
+  animation-delay: 0.5s; /* Delay to match the empty state */
   transform-origin: 100% 100%;
-  opacity: 1; /* Start visible during animation */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
   border-radius: 4px; /* Slightly rounded edges for smoother visuals */
 }
@@ -413,15 +409,15 @@ nav .menu li a {
 
 /* Delay the Start of Each Cube */
 .folding .sk-cube2:before {
-  animation-delay: 0.3s;
+  animation-delay: 0.8s; /* Start after cube1 */
 }
 
 .folding .sk-cube3:before {
-  animation-delay: 0.6s;
+  animation-delay: 1.1s; /* Start after cube2 */
 }
 
 .folding .sk-cube4:before {
-  animation-delay: 0.9s;
+  animation-delay: 1.4s; /* Start after cube3 */
 }
 
 /* Keyframes for the Folding Animation */
@@ -440,6 +436,15 @@ nav .menu li a {
   }
 }
 
+/* Fade-in Effect for Loader */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /* Avatar Section */
 #avatar-section {
