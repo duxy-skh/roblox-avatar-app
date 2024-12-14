@@ -362,7 +362,7 @@ nav .menu li a {
   position: absolute;
   width: 50%; /* Half the size of the container */
   height: 50%;
-  transform: scale(0.75); /* Default scale */
+  transform: scale(1); /* Default scale */
 }
 
 /* Shared Animation for Cubes */
@@ -374,7 +374,7 @@ nav .menu li a {
   width: 100%;
   height: 100%;
   background-color: #000000; /* Customize color */
-  animation: sk-foldCubeAngle 2s infinite ease-in-out;
+  animation: sk-foldCubeAngle 1s infinite ease-in-out;
   transform-origin: 100% 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
   border-radius: 0px; /* Slight rounding for smoother visuals */
