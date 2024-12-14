@@ -344,48 +344,31 @@ nav .menu li a {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    animation: impact-shake-with-spin 1s ease-in-out, spin 2s linear infinite;
-    animation-delay: 0s; /* Start both animations immediately */
+    animation: bounce-spin-fade 1.5s ease-in-out;
     display: inline-block;
 }
 
-@keyframes impact-shake-with-spin {
+}
+
+@keyframes bounce-spin-fade {
     0% {
-        transform: scale(1) translate(0, 0) rotate(0deg);
-    }
-    10% {
-        transform: scale(1.1) translate(-20px, 0) rotate(-20deg);
-        filter: blur(2px); /* Apply motion blur */
-    }
-    20% {
-        transform: scale(0.9) translate(15px, 0) rotate(20deg);
-        filter: blur(1px); /* Lighter blur */
-    }
-    30% {
-        transform: scale(1.05) translate(-10px, 0) rotate(-10deg);
-        filter: blur(1px);
-    }
-    40% {
-        transform: scale(0.95) translate(5px, 0) rotate(10deg);
-        filter: blur(0px); /* Remove blur */
+        transform: scale(0.5) rotate(0deg); /* Start small */
+        opacity: 0; /* Completely invisible */
     }
     50% {
-        transform: scale(1) translate(0, 0) rotate(0deg);
+        transform: scale(1.2) rotate(180deg); /* Grow and rotate */
+        opacity: 0.8; /* Fade in */
+    }
+    70% {
+        transform: scale(0.9) rotate(270deg); /* Slight bounce shrink */
+        opacity: 1; /* Fully visible */
     }
     100% {
-        transform: scale(1) translate(0, 0) rotate(0deg);
+        transform: scale(1) rotate(360deg); /* Settle at normal size and spin */
+        opacity: 1; /* Fully visible */
     }
 }
 
-/* Continuous spinning animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 
 /* Avatar Section */
