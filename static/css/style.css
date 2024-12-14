@@ -344,8 +344,8 @@ nav .menu li a {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    animation: impact-shake 1s ease-in-out, spin 2s linear infinite;
-    animation-delay: 0s, 1s; /* Start spin after shake */
+    animation: rotate 3s linear infinite;
+    animation-delay: 0.0s; /* Start rotation immediately */
     display: inline-block;
 }
 
