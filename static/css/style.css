@@ -344,40 +344,30 @@ nav .menu li a {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    animation: bounce-spin-fade 1.5s ease-in-out;
+    animation: orbit 2s ease-in-out infinite; /* Infinite orbit loop */
     display: inline-block;
 }
 
 }
 
-@keyframes bounce-spin-fade {
+@keyframes orbit {
     0% {
-        transform: scale(0.5) rotate(0deg); /* Start small */
-        opacity: 0; /* Completely invisible */
+        transform: rotate(0deg) translateX(0px) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) translateX(20px) scale(1.1); /* Orbit right and grow */
     }
     50% {
-        transform: scale(1.2) rotate(180deg); /* Grow and rotate */
-        opacity: 0.8; /* Fade in */
+        transform: rotate(180deg) translateX(0px) scale(1); /* Return to center */
     }
-    70% {
-        transform: scale(0.9) rotate(270deg); /* Slight bounce shrink */
-        opacity: 1; /* Fully visible */
+    75% {
+        transform: rotate(270deg) translateX(-20px) scale(1.1); /* Orbit left and grow */
     }
     100% {
-        transform: scale(1) rotate(360deg); /* Settle at normal size and spin */
-        opacity: 1; /* Fully visible */
+        transform: rotate(360deg) translateX(0px) scale(1); /* Return to start */
     }
 }
 
-/* Continuous spinning animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 /* Avatar Section */
 #avatar-section {
