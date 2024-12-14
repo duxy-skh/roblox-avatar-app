@@ -332,7 +332,7 @@ nav .menu li a {
 }
 
 #input-section button:hover {
-    background-color: #0056b3;
+    background-color: #757575;
 }
 
 /* Loading Animation */
@@ -348,24 +348,32 @@ nav .menu li a {
   transition: 0.3s;
 }
 
-/* Folding Cube Container */
+/* Folding Cube Loader Container */
 .folding {
   margin: 20px auto;
-  width: 100px; /* Loader size */
-  height: 100px; /* Loader size */
+  width: 100px;
+  height: 100px;
   position: relative;
-  transform: rotateZ(45deg); /* Slight diagonal tilt */
+  transform: rotateZ(45deg);
 }
 
 /* Individual Cubes */
 .folding .sk-cube {
   position: absolute;
-  width: 50%; /* Half the size of the container */
+  width: 50%;
   height: 50%;
-  transform: scale(1); /* Default scale */
+  transform: scale(1);
+  opacity: 0; /* Initially hidden */
 }
 
-/* Shared Animation for Cubes */
+/* Show Only the First Cube Initially */
+.folding .sk-cube1 {
+  top: 0;
+  left: 0;
+  opacity: 1; /* Only the first cube is visible initially */
+}
+
+/* Animation for All Cubes */
 .folding .sk-cube:before {
   content: "";
   position: absolute;
@@ -373,11 +381,13 @@ nav .menu li a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #007bff; /* Customize color */
-  animation: sk-foldCubeAngle 2.4s infinite ease-in-out;
+  background-color: #000000; /* Customize this color */
+  animation: sk-foldCubeAngle 3s ease-in-out infinite; /* Duration set to 3s */
+  animation-fill-mode: forwards; /* Ensures final state is held */
   transform-origin: 100% 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-  border-radius: 4px; /* Slight rounding for smoother visuals */
+  opacity: 1; /* Start visible during animation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+  border-radius: 4px; /* Slightly rounded edges for smoother visuals */
 }
 
 /* Position Each Cube */
@@ -389,22 +399,19 @@ nav .menu li a {
 .folding .sk-cube2 {
   top: 0;
   right: 0;
-  transform: rotateZ(90deg);
 }
 
 .folding .sk-cube3 {
   bottom: 0;
   right: 0;
-  transform: rotateZ(180deg);
 }
 
 .folding .sk-cube4 {
   bottom: 0;
   left: 0;
-  transform: rotateZ(270deg);
 }
 
-/* Animation Delays for Sequence */
+/* Delay the Start of Each Cube */
 .folding .sk-cube2:before {
   animation-delay: 0.3s;
 }
@@ -417,22 +424,21 @@ nav .menu li a {
   animation-delay: 0.9s;
 }
 
-/* Keyframes for Smooth Folding Animation */
+/* Keyframes for the Folding Animation */
 @keyframes sk-foldCubeAngle {
   0%, 10% {
     transform: perspective(140px) rotateX(-180deg);
-    opacity: 0;
+    opacity: 0; /* Hidden at the start */
   }
   25%, 75% {
     transform: perspective(140px) rotateX(0deg);
-    opacity: 1;
+    opacity: 1; /* Fully visible while flipping */
   }
   90%, 100% {
     transform: perspective(140px) rotateY(180deg);
-    opacity: 0;
+    opacity: 0; /* Hidden after flipping */
   }
 }
-
 
 
 /* Avatar Section */
