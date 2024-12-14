@@ -348,31 +348,24 @@ nav .menu li a {
   transition: 0.3s;
 }
 
+/* Folding Cube Container */
 .folding {
   margin: 20px auto;
-  width: 100px;
-  height: 100px;
+  width: 100px; /* Loader size */
+  height: 100px; /* Loader size */
   position: relative;
-  transform: rotateZ(45deg);
+  transform: rotateZ(45deg); /* Slight diagonal tilt */
 }
 
-.square {
-  position: absolute;
-  top: 36%;
-  right: 35%;
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  transform: rotateZ(87deg);
-}
+/* Individual Cubes */
 .folding .sk-cube {
-  float: left;
-  width: 50%;
+  position: absolute;
+  width: 50%; /* Half the size of the container */
   height: 50%;
-  position: relative;
-  transform: scale(1.1);
+  transform: scale(1); /* Default scale */
 }
 
+/* Shared Animation for Cubes */
 .folding .sk-cube:before {
   content: "";
   position: absolute;
@@ -380,23 +373,38 @@ nav .menu li a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #333;
-  animation: sk-foldCubeAngle 2.4s infinite linear both;
+  background-color: #007bff; /* Customize color */
+  animation: sk-foldCubeAngle 2.4s infinite ease-in-out;
   transform-origin: 100% 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+  border-radius: 4px; /* Slight rounding for smoother visuals */
+}
+
+/* Position Each Cube */
+.folding .sk-cube1 {
+  top: 0;
+  left: 0;
 }
 
 .folding .sk-cube2 {
-  transform: scale(1.1) rotateZ(90deg);
+  top: 0;
+  right: 0;
+  transform: rotateZ(90deg);
 }
 
 .folding .sk-cube3 {
-  transform: scale(1.1) rotateZ(180deg);
+  bottom: 0;
+  right: 0;
+  transform: rotateZ(180deg);
 }
 
 .folding .sk-cube4 {
-  transform: scale(1.1) rotateZ(270deg);
+  bottom: 0;
+  left: 0;
+  transform: rotateZ(270deg);
 }
 
+/* Animation Delays for Sequence */
 .folding .sk-cube2:before {
   animation-delay: 0.3s;
 }
@@ -409,19 +417,17 @@ nav .menu li a {
   animation-delay: 0.9s;
 }
 
+/* Keyframes for Smooth Folding Animation */
 @keyframes sk-foldCubeAngle {
-  0%,
-  10% {
+  0%, 10% {
     transform: perspective(140px) rotateX(-180deg);
     opacity: 0;
   }
-  25%,
-  75% {
+  25%, 75% {
     transform: perspective(140px) rotateX(0deg);
     opacity: 1;
   }
-  90%,
-  100% {
+  90%, 100% {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0;
   }
