@@ -348,7 +348,7 @@ nav .menu li a {
   transition: 0.3s;
 }
 
-/* Folding Cube Container */
+/* Folding Cube Loader Container */
 .folding {
   margin: 20px auto;
   width: 100px; /* Loader size */
@@ -406,15 +406,15 @@ nav .menu li a {
 
 /* Animation Delays for Sequence */
 .folding .sk-cube2:before {
-  animation-delay: 0.3s;
+  animation-delay: 0.75s; /* Delay adjusted for 3-second duration */
 }
 
 .folding .sk-cube3:before {
-  animation-delay: 0.6s;
+  animation-delay: 1.5s; /* Delay adjusted for 3-second duration */
 }
 
 .folding .sk-cube4:before {
-  animation-delay: 0.9s;
+  animation-delay: 2.25s; /* Delay adjusted for 3-second duration */
 }
 
 /* Keyframes for Smooth Folding Animation */
