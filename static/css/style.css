@@ -374,7 +374,7 @@ nav .menu li a {
   width: 100%;
   height: 100%;
   background-color: #000000; /* Customize color */
-  animation: sk-foldCubeAngle 1s infinite ease-in-out;
+  animation: sk-foldCubeAngle 3s infinite ease-in-out;
   transform-origin: 100% 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
   border-radius: 0px; /* Slight rounding for smoother visuals */
