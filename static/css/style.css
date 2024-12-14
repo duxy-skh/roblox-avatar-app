@@ -404,7 +404,12 @@ nav .menu li a {
   transform: rotateZ(270deg);
 }
 
-/* Animation Delays for Sequence */
+/* Animation Delays for Each Cube */
+.folding .sk-cube1:before {
+  animation-delay: 0.5s; /* Add a delay for cube 1 */
+  animation-duration: 4s; /* Slow down cube 1’s animation */
+}
+
 .folding .sk-cube2:before {
   animation-delay: 0.75s; /* Delay adjusted for 3-second duration */
 }
@@ -432,7 +437,6 @@ nav .menu li a {
     opacity: 0;
   }
 }
-
 
 /* Avatar Section */
 #avatar-section {
