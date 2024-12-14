@@ -198,24 +198,4 @@ document.querySelectorAll(".back-button").forEach((button) => {
     });
 });
 
-function showLoader() {
-  const loadingSection = document.getElementById('loading-section');
-  const folding = document.querySelector('.folding');
-  
-  // Reset animation
-  folding.querySelectorAll('.sk-cube').forEach((cube) => {
-    cube.style.animation = 'none'; // Stop animation
-    cube.offsetHeight; // Trigger reflow to reset animation
-    cube.style.animation = ''; // Restore animation
-  });
-  
-  // Show the loader
-  loadingSection.style.display = 'block';
-}
-
-// Hide loader after 3 seconds (optional, adjust as needed)
-setTimeout(() => {
-  document.getElementById('loading-section').style.display = 'none';
-}, 3000);
-
 
