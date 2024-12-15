@@ -107,8 +107,7 @@ nextButton.addEventListener('click', function () {
             // Populate verification details
             document.getElementById('verification-username').textContent =
                 localStorage.getItem('username');
-            document.getElementById('verification-robux').textContent =
-                localStorage.getItem('selectedRobux');
+document.getElementById('robux-amount').textContent = localStorage.getItem('selectedRobux');
             document
                 .getElementById('verification-avatar')
                 .setAttribute('src', avatarContainer.querySelector('img').getAttribute('src'));
