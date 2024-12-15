@@ -335,13 +335,6 @@ nav .menu li a {
     background-color: #0056b3;
 }
 
-.loading-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: #383B3D;
-    margin: 0;
-}
-
 /* Loading Animation */
 /* Loader container */
 .logo-loader {
@@ -534,6 +527,12 @@ button:hover {
     justify-content: center;
     margin-top: 50px;
     text-align: center;
+}
+#loading-section p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #383B3D;
+    margin-bottom: 20px;
 }
 
 /* Robux Loading Section */
