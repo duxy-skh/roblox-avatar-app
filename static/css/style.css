@@ -349,30 +349,6 @@ nav .menu li a {
     display: inline-block;
 }
 
-@keyframes impact-smash-with-spin {
-    0% {
-        transform: scale(1) translate(0, 0) rotate(0deg);
-    }
-    10% {
-        transform: scale(2.5) translate(0, 0) rotate(0deg);
-        filter: blur(5px); /* Intense blur at peak impact */
-    }
-    20% {
-        transform: scale(0.9) translate(0, 0) rotate(0deg);
-        filter: blur(1px); /* Recoil blur */
-    }
-    30% {
-        transform: scale(1.1) translate(0, 0) rotate(0deg);
-        filter: blur(0px); /* Settling */
-    }
-    40% {
-        transform: scale(1) translate(0, 0) rotate(0deg);
-    }
-    100% {
-        transform: scale(1) translate(0, 0) rotate(0deg);
-    }
-}
-
 /* Continuous spinning animation */
 @keyframes spin {
     0% {
