@@ -387,22 +387,6 @@ nav .menu li a {
     }
 }
 
-#loading-section {
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack text and animation vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    min-height: 100vh; /* Take full viewport height */
-    text-align: center; /* Ensure text is centered */
-}
-
-.loading-content {
-    display: flex;
-    flex-direction: column; /* Stack the text and loader vertically */
-    align-items: center;
-    gap: 15px; /* Add spacing between the text and the loader */
-}
-
 .loading-text {
     font-size: 18px;
     font-weight: bold;
