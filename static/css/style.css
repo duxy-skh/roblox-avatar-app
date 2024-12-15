@@ -316,6 +316,7 @@ nav .menu li a {
     border-radius: 5px;
     text-align: center;
     box-sizing: border-box;
+    background-color: #F1F4F5; /* Updated background color */
 }
 
 #input-section button {
