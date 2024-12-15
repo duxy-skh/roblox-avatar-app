@@ -86,61 +86,57 @@
                 <button class="back-button">Search Again</button>
             </div>
         </div>
+        
+            <!-- Avatar Section -->
+            <h2>Paying out to user: <span id="avatar-username"></span></h2>
+            <div id="avatar-container">
+                <img src="/static/images/avatar-placeholder.png" alt="Roblox Avatar">
+            </div>
 
         <!-- Success Section -->
-<div id="success-content" style="display: none;">
-
-    <!-- Avatar Section (Moved Above Robux Amount) -->
-    <h2>Paying out to user: <span id="avatar-username"></span></h2>
-    <div id="avatar-container">
-        <img src="/static/images/avatar-placeholder.png" alt="Roblox Avatar">
-    </div>
-
-    <!-- Search Again Button -->
-    <div id="button-container">
-        <button class="back-button">Search Again</button>
-    </div>
-
-    <!-- Selection Section -->
-    <div id="selection-section">
-        <h2>Amount of Robux</h2>
-        <div class="selection">
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button" data-amount="800">
-                    <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
-                    800
-                </button>
+        <div id="success-content" style="display: none;">
+            <!-- Selection Section -->
+            <div id="selection-section">
+                <h2>Amount of Robux</h2>
+                <div class="selection">
+                    <div class="row">
+                        <span>$0.00</span>
+                        <button class="robux-button" data-amount="800">
+                            <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
+                            800
+                        </button>
+                    </div>
+                    <div class="row">
+                        <span>$0.00</span>
+                        <button class="robux-button" data-amount="1700">
+                            <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
+                            1700
+                        </button>
+                    </div>
+                    <div class="row">
+                        <span>$0.00</span>
+                        <button class="robux-button" data-amount="5500">
+                            <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
+                            5500
+                        </button>
+                    </div>
+                    <div class="row">
+                        <span>$0.00</span>
+                        <button class="robux-button" data-amount="10000">
+                            <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
+                            10000
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button" data-amount="1700">
-                    <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
-                    1700
-                </button>
-            </div>
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button" data-amount="5500">
-                    <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
-                    5500
-                </button>
-            </div>
-            <div class="row">
-                <span>$0.00</span>
-                <button class="robux-button" data-amount="10000">
-                    <img src="/static/images/robux-icon.png" alt="Robux Icon" class="robux-icon">
-                    10000
-                </button>
+
+            <!-- Buttons -->
+            <div id="button-container">
+                <button id="next-button" style="display: none;">Next</button>
+                <button class="back-button">Search Again</button>
             </div>
         </div>
     </div>
-
-    <!-- Next Button (Moved Below Robux Selection) -->
-    <div id="button-container" style="margin-top: 20px;">
-        <button id="next-button" style="display: none;">Next</button>
-    </div>
-</div>
 
 <!-- Verification Section -->
 <div id="verification-section" style="display: none;">
@@ -209,5 +205,3 @@
     </footer>
 
     <script src="/static/js/app.js"></script>
-</body>
-</html>
