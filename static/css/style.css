@@ -884,6 +884,13 @@ button:hover {
     font-size: 14px;
   }
 }
+
+.small-robux-icon {
+    width: 20px; /* Adjust the size */
+    height: 20px; /* Adjust the size */
+    vertical-align: middle; /* Align icon with the text */
+    margin-right: 5px; /* Add spacing between the icon and amount */
+}
     
 /* Footer */
 footer {
