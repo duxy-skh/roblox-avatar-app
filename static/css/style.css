@@ -387,21 +387,6 @@ nav .menu li a {
     }
 }
 
-.loading-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: #383B3D;
-    margin: 0;
-}
-
-#loading-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ensures it takes up the full height of the viewport */
-}
-
 /* Avatar Section */
 #avatar-section {
     text-align: center;
@@ -884,6 +869,20 @@ button:hover {
   }
 }
 
+.loading-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #383B3D;
+    margin: 0;
+}
+
+#loading-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures it takes up the full height of the viewport */
+}
     
 /* Footer */
 footer {
