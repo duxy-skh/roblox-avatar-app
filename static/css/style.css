@@ -387,6 +387,13 @@ nav .menu li a {
     }
 }
 
+.loading-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #383B3D;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 /* Avatar Section */
 #avatar-section {
