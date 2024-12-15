@@ -394,6 +394,14 @@ nav .menu li a {
     margin: 0;
 }
 
+#loading-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures it takes up the full height of the viewport */
+}
+
 /* Avatar Section */
 #avatar-section {
     text-align: center;
