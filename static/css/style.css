@@ -885,11 +885,15 @@ button:hover {
   }
 }
 
+#verification-robux {
+    display: inline-flex; /* Use flexbox for inline alignment */
+    align-items: center; /* Vertically center the icon and text */
+    gap: 5px; /* Space between the icon and the number */
+}
+
 .small-robux-icon {
-    width: 20px; /* Adjust the size */
-    height: 20px; /* Adjust the size */
-    vertical-align: middle; /* Align icon with the text */
-    margin-right: 5px; /* Add spacing between the icon and amount */
+    width: 20px; /* Adjust size of the icon */
+    height: 20px;
 }
     
 /* Footer */
