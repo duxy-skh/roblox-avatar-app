@@ -344,9 +344,37 @@ nav .menu li a {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    animation: impact-smash-with-spin 1s ease-in-out, spin 2s linear infinite;
+    animation: impact-shake-with-spin 1s ease-in-out, spin 2s linear infinite;
     animation-delay: 0s; /* Start both animations immediately */
     display: inline-block;
+}
+
+@keyframes impact-shake-with-spin {
+    0% {
+        transform: scale(1) translate(0, 0) rotate(0deg);
+    }
+    10% {
+        transform: scale(1.15) translate(-30px, 0) rotate(-25deg);
+        filter: blur(3px); /* Increased motion blur */
+    }
+    20% {
+        transform: scale(0.85) translate(20px, 0) rotate(25deg);
+        filter: blur(2px); /* Adjusted blur */
+    }
+    30% {
+        transform: scale(1.1) translate(-15px, 0) rotate(-15deg);
+        filter: blur(1px);
+    }
+    40% {
+        transform: scale(0.9) translate(10px, 0) rotate(15deg);
+        filter: blur(0px); /* Remove blur */
+    }
+    50% {
+        transform: scale(1) translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) translate(0, 0) rotate(0deg);
+    }
 }
 
 /* Continuous spinning animation */
@@ -503,12 +531,11 @@ button:hover {
     text-align: center;
 }
 
-.loading-text {
+#robux-loading-section p {
     font-size: 18px;
     font-weight: bold;
     color: #383B3D;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 .loader {
