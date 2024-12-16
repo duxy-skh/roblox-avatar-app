@@ -235,51 +235,60 @@ nav .menu li a {
     width: 80%;
     max-width: 800px;
     margin: 20px auto;
-    overflow: hidden;
     border-radius: 10px;
-    background-image: url('/static/images/fireworks.png'); /* Ensure your image path is correct */
-    background-size: cover; /* Ensure the image scales to fit the container */
-    background-position: center; /* Center the image */
+    overflow: hidden;
+    background-image: url('/static/images/fireworks.png'); /* Correct path */
+    background-size: cover; /* Ensure the image fills the banner */
+    background-position: center; /* Center the background image */
+    padding: 5%; /* Responsive padding to allow text space */
+    min-height: 200px; /* Minimum height for smaller text */
     display: flex;
-    justify-content: center; /* Center the text horizontally */
-    align-items: center; /* Center the text vertically */
-    padding: 20px; /* Add space around the text */
-    min-height: 150px; /* Set a minimum height for the banner */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
-#banner img {
+/* Dark overlay for readability */
+#banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 125px; /* Reduced max height for a smaller banner */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text contrast */
+    z-index: 1; /* Behind the text but above the image */
 }
 
 .banner-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    z-index: 2; /* Keep the text above the overlay */
     color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     text-align: center;
-    padding: 20px; /* Add padding around the text */
-    font-size: calc(1rem + 1vw); /* Make font size responsive */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Better readability */
+    font-size: calc(1rem + 1.5vw); /* Responsive font size */
+    line-height: 1.3; /* Improve spacing between lines */
+    padding: 10px; /* Spacing around text */
 }
 
 .banner-text h1 {
-    font-size: 24px; /* Adjusted font size for smaller banner */
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .banner-text p {
-    font-size: 14px; /* Adjusted font size for smaller banner */
+    font-size: 14px;
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     #banner {
-        width: 85%; /* Adjusted width for smaller screens */
+        width: 90%; /* Slightly narrower on smaller screens */
+        padding: 10%; /* Increase padding */
+    }
+
+    .banner-text {
+        font-size: calc(0.8rem + 1.2vw); /* Slightly smaller text */
     }
 
     .banner-text h1 {
@@ -290,6 +299,7 @@ nav .menu li a {
         font-size: 12px;
     }
 }
+
 
 /* Input Section */
 #input-section {
