@@ -237,7 +237,14 @@ nav .menu li a {
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url('/static/images/fireworks.png'); /* Ensure your image path is correct */
+    background-size: cover; /* Ensure the image scales to fit the container */
+    background-position: center; /* Center the image */
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    padding: 20px; /* Add space around the text */
+    min-height: 150px; /* Set a minimum height for the banner */
 }
 
 #banner img {
@@ -255,7 +262,8 @@ nav .menu li a {
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     text-align: center;
-    padding: 0 20px;
+    padding: 20px; /* Add padding around the text */
+    font-size: calc(1rem + 1vw); /* Make font size responsive */
 }
 
 .banner-text h1 {
