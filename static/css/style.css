@@ -232,8 +232,8 @@ nav .menu li a {
 #banner {
     position: relative;
     text-align: center;
-    width: 80%;
-    max-width: 800px;
+    width: 90%; /* Adjust for smaller screens */
+    max-width: 1200px; /* Increased for larger screens */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -244,7 +244,7 @@ nav .menu li a {
     width: 100%;
     height: auto;
     object-fit: cover;
-    max-height: 125px; /* Reduced max height for a smaller banner */
+    max-height: 300px; /* Allow a larger height for bigger screens */
 }
 
 .banner-text {
@@ -256,32 +256,38 @@ nav .menu li a {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     text-align: center;
     padding: 0 20px;
+    font-size: calc(16px + 1vw); /* Scale font size based on viewport width */
 }
 
 .banner-text h1 {
-    font-size: 24px; /* Adjusted font size for smaller banner */
+    font-size: 2em; /* Default size for larger screens */
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .banner-text p {
-    font-size: 14px; /* Adjusted font size for smaller banner */
+    font-size: 1em;
 }
 
-/* Responsive Design for Smaller Screens */
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
     #banner {
-        width: 85%; /* Adjusted width for smaller screens */
+        max-height: 200px; /* Reduced height for smaller screens */
+    }
+
+    .banner-text {
+        font-size: calc(12px + 1vw); /* Smaller scaling */
     }
 
     .banner-text h1 {
-        font-size: 18px;
+        font-size: 1.5em;
     }
 
     .banner-text p {
-        font-size: 12px;
+        font-size: 0.9em;
     }
 }
+
 
 /* Input Section */
 #input-section {
