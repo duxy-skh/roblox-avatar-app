@@ -412,7 +412,7 @@ nav .menu li a {
 /* Error Icon */
 .error-icon {
     color: #e74c3c; /* Red color */
-    font-size: 60px; /* Icon size */
+    font-size: 100px; /* Icon size */
     margin-bottom: 15px;
 }
 
