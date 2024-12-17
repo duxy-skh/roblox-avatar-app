@@ -259,7 +259,7 @@ nav .menu li a {
     font-size: calc(16px + 1vw); /* Scale font size based on viewport width */
 }
 
-.banner-text h1 {
+.banner-text h2 {
     font-size: 2em; /* Default size for larger screens */
     font-weight: bold;
     margin-bottom: 10px;
