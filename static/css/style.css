@@ -368,15 +368,16 @@ nav .menu li a {
 
 /* Button Styling */
 #fetch-button {
-    margin-top: 15px;
-    padding: 8px 20px;
+    width: auto; /* Keep the button's default width */
+    max-width: 200px; /* Optional: Set a maximum width for the button */
     background-color: #007bff;
     color: #FFFFFF;
-    font-size: 16px;
     border: none;
-    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 #fetch-button:hover {
