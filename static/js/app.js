@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchButton.addEventListener('click', () => {
         const username = document.getElementById('username').value.trim();
 
-        if (!username) {
-            alert('Please enter a username.');
-            return;
-        }
+    if (!username) {
+        showPopup('Please enter a username.'); // Use the custom popup
+        return;
+    }
 
         // Show loading section, hide input section
         inputSection.style.display = 'none';
