@@ -904,6 +904,22 @@ button:hover {
   }
 }
 
+/* Make the card links cover the full card */
+.payout-link {
+    display: block;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+.payout-link .payout-card {
+    transition: transform 0.2s ease; /* Add hover effect */
+}
+
+.payout-link .payout-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+}
+
 #verification-robux {
     display: inline-flex; /* Use flexbox for inline alignment */
     align-items: center; /* Vertically center the icon and text */
