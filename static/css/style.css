@@ -230,21 +230,24 @@ nav .menu li a {
 
 /* Banner Section */
 #banner {
-    position: relative;
-    text-align: center;
-    width: 90%; /* Adjust for smaller screens */
-    max-width: 1200px; /* Increased for larger screens */
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#banner img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 300px; /* Allow a larger height for bigger screens */
+width: 100%;
+  margin: 30px auto;
+  height: 250px;
+  background-image: linear-gradient(
+      0deg,
+      rgba(39, 39, 46, 0.5),
+      rgba(39, 39, 46, 0.5)
+    ),
+    url('static/images/fireworks.png');
+  background-position: bottom;
+  background-size: cover;
+  margin-bottom: 24px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .banner-text {
@@ -260,13 +263,12 @@ nav .menu li a {
 }
 
 .banner-text h2 {
-    font-size: 2em; /* Default size for larger screens */
-    font-weight: bold;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 35px;
 }
 
 .banner-text p {
-    font-size: 1em;
+  font-size: 17px;
 }
 
 /* Adjustments for smaller screens */
