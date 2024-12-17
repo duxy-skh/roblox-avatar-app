@@ -762,11 +762,38 @@ button:hover {
     width: 80%;
 }
 
+/* Ensure the link wraps the card without breaking the layout */
+.payout-link {
+    display: block;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+}
+
+.payout-link .payout-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Ensures the card fills the parent container */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.payout-link .payout-card:hover {
+    transform: translateY(-5px); /* Slight hover lift */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+}
+
 .payout-avatar {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-bottom: 15px;
+    border: 3px solid #dee1e3;
 }
 
 .payout-username {
@@ -902,22 +929,6 @@ button:hover {
   .payout-amount {
     font-size: 14px;
   }
-}
-
-/* Make the card links cover the full card */
-.payout-link {
-    display: block;
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color */
-}
-
-.payout-link .payout-card {
-    transition: transform 0.2s ease; /* Add hover effect */
-}
-
-.payout-link .payout-card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add hover shadow */
 }
 
 #verification-robux {
