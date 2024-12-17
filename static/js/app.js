@@ -197,6 +197,32 @@ document.querySelectorAll(".back-button").forEach((button) => {
     });
 });
 
+// Function to show the custom popup
+function showPopup(message) {
+    const popup = document.getElementById('custom-popup');
+    const popupMessage = document.getElementById('popup-message');
+    popupMessage.textContent = message; // Update the message text
+    popup.style.display = 'flex'; // Display the popup
+}
+
+// Event listener for closing the popup
+document.getElementById('popup-close').addEventListener('click', () => {
+    document.getElementById('custom-popup').style.display = 'none';
+});
+
+// Trigger the popup when the Next button is clicked
+document.getElementById('fetch-button').addEventListener('click', () => {
+    const usernameInput = document.getElementById('username');
+    const username = usernameInput.value.trim();
+
+    if (!username) {
+        showPopup('Please enter a username.'); // Show the custom popup
+    } else {
+        console.log('Username entered:', username); // Continue with your logic
+    }
+});
+
+
 
 
 
