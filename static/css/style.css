@@ -384,6 +384,68 @@ nav .menu li a {
     background-color: #0056b3;
 }
 
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensure popup appears on top */
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    width: 90%;
+}
+
+/* Error Icon */
+.error-icon {
+    color: #e74c3c; /* Red color */
+    font-size: 60px; /* Icon size */
+    margin-bottom: 15px;
+}
+
+/* Popup Title */
+.popup-content h2 {
+    font-size: 22px;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Popup Message */
+.popup-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* OK Button */
+.popup-content button {
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
 /* Loading Animation */
 /* Loader container */
 .logo-loader {
