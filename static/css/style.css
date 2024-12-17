@@ -80,6 +80,7 @@ body {
 
 /* Navigation Bar */
 nav {
+    margin-bottom: 20px; /* Adjust as needed */
     background-color: #DEE1E3;
     width: 100vw; /* Ensure full width of the viewport */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -235,7 +236,6 @@ nav .menu li a {
 
 /* Banner Section */
 #banner {
-    margin-top: 20px;
     position: relative;
     width: 100%;
     max-width: 1200px; /* Align with the navbar's max width */
