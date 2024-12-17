@@ -305,7 +305,7 @@ nav .menu li a {
 #input-section {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center the input and button horizontally */
+    align-items: center; /* Center-align the input and button */
     gap: 15px; /* Add space between the input field and button */
     padding: 20px;
     background-color: #FFFFFF;
@@ -315,42 +315,71 @@ nav .menu li a {
     max-width: 800px;
     margin: 20px auto;
     text-align: center;
-    width: 100%;
 }
 
+/* Input Section Title */
 #input-section h2 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-#input-section input {
-    width: 80%; /* Adjust input width as needed */
-    max-width: 400px;
-    padding: 10px;
-    font-size: 14px;
-    margin-bottom: 15px;
-    border: 1px solid #DEE1E3;
-    border-radius: 5px;
-    text-align: center;
-    box-sizing: border-box;
-    background-color: #F1F4F5; /* Updated background color */
+/* Input Container */
+.input-container {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto; /* Center the input box */
 }
 
-#input-section button {
-    width: auto; /* Keep the button's default width */
-    max-width: 200px; /* Optional: Set a maximum width for the button */
+/* FontAwesome Search Icon */
+.input-container .icon-search {
+    position: absolute;
+    top: 50%;
+    left: 12px; /* Adjust icon position */
+    transform: translateY(-50%);
+    color: #aaa; /* Light gray */
+    font-size: 18px;
+    pointer-events: none; /* Non-interactive */
+}
+
+/* Input Box */
+.input-container input {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Space for search icon */
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Rounded edges */
+    font-size: 16px;
+    color: #333;
+    background-color: #f9fafb;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-container input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.input-container input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Styling */
+#fetch-button {
+    margin-top: 15px;
+    padding: 8px 20px;
     background-color: #007bff;
     color: #FFFFFF;
-    border: none;
-    padding: 10px 20px;
     font-size: 16px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-#input-section button:hover {
+#fetch-button:hover {
     background-color: #0056b3;
 }
 
