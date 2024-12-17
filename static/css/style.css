@@ -235,7 +235,7 @@ nav .menu li a {
 
 /* Banner Section */
 #banner {
-    margin-top: 20px; /* Adjust the value as needed */
+    padding-top: 20px;
     position: relative;
     width: 100%;
     max-width: 1200px; /* Align with the navbar's max width */
