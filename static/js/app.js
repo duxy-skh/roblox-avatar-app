@@ -51,9 +51,16 @@ fetch('/api/avatar', {
             avatarSection.style.display = 'block'; // Show avatar section
             nextButton.style.display = 'none'; // Hide Next button
 
-            // Hide the "Paying out to user" text
-            avatarUsername.textContent = '';
-            avatarContainer.style.display = 'none';
+            // Hide the "Paying out to user" section
+            const avatarSection = document.querySelector('#avatar-section h2 + div'); // Target the avatar container
+            const payingOutText = document.querySelector('#avatar-section h2'); // Target the second h2
+
+            if (payingOutText) {
+            payingOutText.style.display = 'none';
+            }
+            if (avatarSection) {
+            avatarSection.style.display = 'none';
+            }
             } else {
             // Display avatar and success content
             avatarContainer.innerHTML = `
