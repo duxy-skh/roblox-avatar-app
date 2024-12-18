@@ -51,10 +51,10 @@ fetch('/api/avatar', {
             avatarSection.style.display = 'block'; // Show avatar section
             nextButton.style.display = 'none'; // Hide Next button
 
-            // Hide "Paying out to user" and avatar content
-            avatarUsername.textContent = '';
+            // Hide the "Paying out to user" section
+            document.querySelector('h2').style.display = 'none'; 
             avatarContainer.style.display = 'none';
-        } else {
+            } else {
             // Display avatar and success content
             avatarContainer.innerHTML = `
                 <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
