@@ -333,7 +333,7 @@ nav .menu li a {
 }
 
 /* Flaticon Search Icon */
-.input-container .fi-bs-search {
+.input-container .fi-bs-member-search {
     position: absolute;
     top: 50%; /* Move to center */
     left: 12px; /* Adjust position from the left */
