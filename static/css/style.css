@@ -339,7 +339,7 @@ nav .menu li a {
     left: 12px; /* Adjust position from the left */
     transform: translateY(-50%); /* Align perfectly in the middle */
     color: #aaa; /* Light gray */
-    font-size: 20px; /* Slightly larger for balance */
+    font-size: 18px; /* Slightly larger for balance */
     pointer-events: none; /* Prevent interaction */
     z-index: 1; /* Ensure it appears above the input */
 }
