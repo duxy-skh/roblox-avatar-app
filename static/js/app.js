@@ -14,71 +14,73 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedRobux = null;
 
     // Handle Fetch Button Click
-    fetchButton.addEventListener('click', () => {
-        const username = document.getElementById('username').value.trim();
+   fetchButton.addEventListener('click', () => {
+    const username = document.getElementById('username').value.trim();
 
     if (!username) {
         showPopup('Please enter a username.'); // Use the custom popup
         return;
     }
 
-        // Show loading section, hide input section
-        inputSection.style.display = 'none';
-        loadingSection.style.display = 'block';
+    // Show loading section, hide input section
+    inputSection.style.display = 'none';
+    loadingSection.style.display = 'block';
 
-        // Simulate API call
-        setTimeout(() => {
-fetch('/api/avatar', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ username }),
-})
-    .then((response) => response.json())
-    .then((data) => {
-        // Hide loading section
-        loadingSection.style.display = 'none';
+    // Simulate API call
+    setTimeout(() => {
+        fetch('/api/avatar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                loadingSection.style.display = 'none'; // Hide loading section
 
-        if (data.error) {
-            // Handle user not found
-            avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
-            errorMessage.style.display = 'block'; // Show error message
-            successContent.style.display = 'none'; // Hide success content
-            avatarSection.style.display = 'block'; // Show avatar section
-            nextButton.style.display = 'none'; // Hide Next button
+                if (data.error) {
+                    // Handle user not found
+                    document.getElementById('error-message').style.display = 'block'; // Show error message
+                    avatarSection.style.display = 'block'; // Show avatar section
+                    successContent.style.display = 'none'; // Hide success content
 
-            // Hide "Paying out to user" and avatar content
-            avatarUsername.textContent = '';
-            avatarContainer.style.display = 'none';
-        } else {
-            // Display avatar and success content
-            avatarContainer.innerHTML = `
-                <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
-            `;
-            avatarUsername.textContent = data.username;
-            errorMessage.style.display = 'none'; // Hide error message
-            successContent.style.display = 'block'; // Show success content
-            avatarSection.style.display = 'block'; // Show avatar section
-            nextButton.style.display = 'inline-block'; // Show Next button
+                    // Hide "Paying out to user" text and avatar
+                    document.getElementById('payout-header').style.display = 'none';
+                    avatarContainer.style.display = 'none';
+                    avatarUsername.textContent = ''; // Clear any previous username
 
-            // Show "Paying out to user" section
-            avatarContainer.style.display = 'block';
-        }
-    })
-    .catch((error) => {
-        console.error('Fetch error:', error);
-        loadingSection.style.display = 'none';
+                    console.error('User not found:', data.error);
+                } else {
+                    // Handle user found
+                    avatarSection.style.display = 'block'; // Show avatar section
+                    successContent.style.display = 'block'; // Show success content
+                    document.getElementById('error-message').style.display = 'none'; // Hide error message
 
-        // Show unexpected error
-        avatarContainer.innerHTML = '<p class="error">An unexpected error occurred. Please try again.</p>';
-        errorMessage.style.display = 'block'; // Show error message
-        successContent.style.display = 'none'; // Hide success content
-        avatarSection.style.display = 'block'; // Show avatar section
-        nextButton.style.display = 'none'; // Hide Next button
-    });
-        }, 3000); // Simulated delay for loading
-    });
+                    // Display "Paying out to user" text and avatar
+                    document.getElementById('payout-header').style.display = 'block';
+                    avatarContainer.style.display = 'block';
+                    avatarUsername.textContent = data.username; // Display username
+                    avatarContainer.innerHTML = `
+                        <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
+                    `;
+                }
+            })
+            .catch((error) => {
+                console.error('Fetch error:', error);
+                loadingSection.style.display = 'none';
+
+                // Show unexpected error message
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('payout-header').style.display = 'none';
+                avatarContainer.style.display = 'none';
+                avatarSection.style.display = 'block';
+                successContent.style.display = 'none';
+                avatarUsername.textContent = '';
+                avatarContainer.innerHTML = '<p class="error">An unexpected error occurred. Please try again.</p>';
+            });
+    }, 3000); // Simulated delay
+});
 
     // Handle Robux Selection
     document.querySelectorAll('.robux-button').forEach((button) => {
