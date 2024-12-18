@@ -446,11 +446,6 @@ nav .menu li a {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Hide "Paying out to user" when the error message is visible */
-#error-message:has(.error) + h2 {
-    display: none;
-}
-
 /* Loading Animation */
 /* Loader container */
 .logo-loader {
