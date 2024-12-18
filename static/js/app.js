@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     avatarContainer.innerHTML = `
                         <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
                     `;
+                    
+                    // Display Next button
+                    document.getElementById('next-button').style.display = 'inline-block';
                 }
             })
             .catch((error) => {
