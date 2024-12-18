@@ -329,27 +329,28 @@ nav .menu li a {
     position: relative;
     width: 80%;
     max-width: 500px;
-    margin: 0 auto; /* Center the input box */
+    margin: 0 auto; /* Center horizontally */
 }
 
 /* Flaticon Search Icon */
 .input-container .fi-bs-search {
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 12px; /* Adjust icon position from the left */
-    transform: translateY(-50%); /* Fine-tune vertical centering */
-    color: #aaa; /* Light gray color */
-    font-size: 18px; /* Adjust icon size */
-    pointer-events: none; /* Make it non-interactive */
+    top: 50%; /* Move to center */
+    left: 12px; /* Adjust position from the left */
+    transform: translateY(-50%); /* Align perfectly in the middle */
+    color: #aaa; /* Light gray */
+    font-size: 20px; /* Slightly larger for balance */
+    pointer-events: none; /* Prevent interaction */
     z-index: 1; /* Ensure it appears above the input */
 }
 
-/* Input Box */
+/* Input Field */
 .input-container input {
     width: 100%;
-    padding: 10px 10px 10px 40px; /* Space for the search icon */
+    height: 40px; /* Explicit height for better alignment */
+    padding: 10px 10px 10px 45px; /* Extra padding for the icon */
     border: 1px solid #ddd;
-    border-radius: 25px; /* Rounded edges */
+    border-radius: 25px;
     font-size: 16px;
     color: #333;
     background-color: #f9fafb;
