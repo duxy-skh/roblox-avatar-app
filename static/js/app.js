@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+        // Save the username in localStorage
+        localStorage.setItem('username', username);
+        
         // Show loading section, hide input section
         inputSection.style.display = 'none';
         loadingSection.style.display = 'block';
@@ -111,8 +114,8 @@ nextButton.addEventListener('click', function () {
             verificationSection.style.display = 'block';
 
             // Populate verification details
-            document.getElementById('verification-username').textContent =
-                localStorage.getItem('username');
+            document.getElementById('verification-username').textContent = localStorage.getItem('username');
+
             document.getElementById('robux-amount').textContent = localStorage.getItem('selectedRobux');
             document
                 .getElementById('verification-avatar')
