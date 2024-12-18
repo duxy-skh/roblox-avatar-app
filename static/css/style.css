@@ -411,13 +411,13 @@ nav .menu li a {
     width: 90%;
 }
 
-/* Error Icon */
-.error-icon {
+/* Flat Icon Error Icon */
+.fi-rr-octagon-xmark {
     color: #e74c3c; /* Red color */
-    font-size: 60px; /* Larger icon size */
-    display: block; /* Make it a block element for spacing */
-    margin: 0 auto 15px; /* Center horizontally and add bottom spacing */
-    text-align: center; /* Ensure it's centered */
+    font-size: 60px; /* Make the icon bigger */
+    display: block; /* Center alignment helper */
+    margin: 0 auto 15px; /* Center horizontally and add spacing below */
+    text-align: center; /* Ensure it aligns in the center */
 }
 
 /* Popup Title */
