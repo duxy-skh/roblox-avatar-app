@@ -50,7 +50,6 @@ fetch('/api/avatar', {
 
             // Hide "Paying out to user" and avatar content
             avatarUsername.textContent = '';
-            document.getElementById('payout-text').style.display = 'none';
             avatarContainer.style.display = 'none';
         } else {
             // Display avatar and success content
