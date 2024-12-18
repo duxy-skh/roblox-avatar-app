@@ -336,7 +336,7 @@ nav .menu li a {
 .input-container .fi-bs-member-search {
     position: absolute;
     top: 50%; /* Move to center */
-    left: 12px; /* Adjust position from the left */
+    left: 15px; /* Adjust position from the left */
     transform: translateY(-50%); /* Align perfectly in the middle */
     color: #aaa; /* Light gray */
     font-size: 18px; /* Slightly larger for balance */
