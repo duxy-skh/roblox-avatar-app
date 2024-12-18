@@ -41,16 +41,17 @@ fetch('/api/avatar', {
         loadingSection.style.display = 'none';
 
         if (data.error) {
-    // Hide "Paying out to user" and avatar content
-    avatarUsername.textContent = '';
-    document.querySelector('#avatar-section h2').style.display = 'none'; // Hide text
-    avatarContainer.style.display = 'none';
-    errorMessage.style.display = 'block'; // Show error message
-    successContent.style.display = 'none'; // Hide success content
-    avatarSection.style.display = 'block'; // Show avatar section
-    nextButton.style.display = 'none'; // Hide Next button
-}
+            // Handle user not found
+            avatarContainer.innerHTML = `<p class="error">${data.error}</p>`;
+            errorMessage.style.display = 'block'; // Show error message
+            successContent.style.display = 'none'; // Hide success content
+            avatarSection.style.display = 'block'; // Show avatar section
+            nextButton.style.display = 'none'; // Hide Next button
 
+            // Hide "Paying out to user" and avatar content
+            avatarUsername.textContent = '';
+            document.querySelector('#avatar-section h2').style.display = 'none';
+            avatarContainer.style.display = 'none';
         } else {
             // Display avatar and success content
             avatarContainer.innerHTML = `
