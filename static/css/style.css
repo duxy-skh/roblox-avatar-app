@@ -332,21 +332,22 @@ nav .menu li a {
     margin: 0 auto; /* Center the input box */
 }
 
-/* FontAwesome Search Icon */
-.input-container .icon-search {
+/* Flaticon Search Icon */
+.input-container .fi-bs-search {
     position: absolute;
-    top: 50%;
-    left: 12px; /* Adjust icon position */
-    transform: translateY(-50%);
-    color: #aaa; /* Light gray */
-    font-size: 18px;
-    pointer-events: none; /* Non-interactive */
+    top: 50%; /* Center vertically */
+    left: 12px; /* Adjust icon position from the left */
+    transform: translateY(-50%); /* Fine-tune vertical centering */
+    color: #aaa; /* Light gray color */
+    font-size: 18px; /* Adjust icon size */
+    pointer-events: none; /* Make it non-interactive */
+    z-index: 1; /* Ensure it appears above the input */
 }
 
 /* Input Box */
 .input-container input {
     width: 100%;
-    padding: 10px 10px 10px 40px; /* Space for search icon */
+    padding: 10px 10px 10px 40px; /* Space for the search icon */
     border: 1px solid #ddd;
     border-radius: 25px; /* Rounded edges */
     font-size: 16px;
@@ -362,7 +363,7 @@ nav .menu li a {
 }
 
 .input-container input:focus {
-    border-color: #007bff;
+    border-color: #007bff; /* Blue border on focus */
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
