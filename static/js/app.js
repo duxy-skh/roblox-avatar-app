@@ -95,7 +95,7 @@ fetch('/api/avatar', {
         });
     });
 
-  // Handle Next Button
+// Handle Next Button
 nextButton.addEventListener('click', function () {
     if (selectedRobux) {
         // Show the Robux loading section
@@ -113,13 +113,13 @@ nextButton.addEventListener('click', function () {
             // Populate verification details
             document.getElementById('verification-username').textContent =
                 localStorage.getItem('username');
-document.getElementById('robux-amount').textContent = localStorage.getItem('selectedRobux');
+            document.getElementById('robux-amount').textContent = localStorage.getItem('selectedRobux');
             document
                 .getElementById('verification-avatar')
                 .setAttribute('src', avatarContainer.querySelector('img').getAttribute('src'));
         }, 3000); // 3-second loading simulation
     } else {
-        alert('Please select a Robux amount!');
+        showPopup('Please select a Robux amount!'); // Use the custom popup
     }
 });
 
