@@ -416,7 +416,7 @@ nav .menu li a {
     color: #e74c3c; /* Red color */
     font-size: 60px; /* Make the icon bigger */
     display: block; /* Center alignment helper */
-    margin: 0 auto 15px; /* Center horizontally and add spacing below */
+    margin: 0 auto 8px; /* Reduce bottom margin */
     text-align: center; /* Ensure it aligns in the center */
 }
 
