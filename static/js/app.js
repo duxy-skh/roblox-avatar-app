@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showPopup('Please enter a username.'); // Use the custom popup
         return;
     }
+       
+    localStorage.setItem('username', username); // Save the entered username
 
     // Show loading section, hide input section
     inputSection.style.display = 'none';
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Display "Paying out to user" text and avatar
                     document.getElementById('payout-header').style.display = 'block';
                     avatarContainer.style.display = 'block';
-                    avatarUsername.textContent = data.username; // Display username
+                    avatarUsername.textContent = username; // Display username
                     avatarContainer.innerHTML = `
                         <img src="${data.avatar_url}" alt="Roblox Avatar" style="width:150px; height:150px; border-radius:50%;">
                     `;
