@@ -267,9 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { username: "haz3mn", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-56AED1F836EC2459251CDBA614272161-Png/150/150/AvatarHeadshot/Webp/noFilter" }, 
       
     ];
-
-    // Fixed Robux amounts
-    const robuxAmounts = [800, 1700, 5500, 10000];
+    
+    const robuxAmounts = [800, 1700, 5500, 10000]; // Fixed Robux amounts
 
     function getRandomPayout() {
         const user = users[Math.floor(Math.random() * users.length)];
@@ -277,30 +276,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return { username: user.username, avatar: user.avatar, robux };
     }
 
-function showNotification() {
-    const { username, avatar, robux } = getRandomPayout();
-    popupContainer.innerHTML = `
-        <img src="${avatar}" alt="${username} Avatar">
-        <div class="popup-details">
-            <h4>${username}</h4>
-            <p>Received ${robux} Robux</p>
-        </div>
-    `;
-    popupContainer.style.display = 'flex';
-    popupContainer.classList.remove('fade-out'); // Reset fade-out
+    function showNotification() {
+        const { username, avatar, robux } = getRandomPayout();
+        popupContainer.innerHTML = `
+            <img src="${avatar}" alt="${username} Avatar">
+            <div class="popup-details">
+                <h4>${username}</h4>
+                <p>Received ${robux} Robux</p>
+            </div>
+        `;
+        popupContainer.classList.add('show'); // Add the class to make it visible
 
-    // Hide notification after 5 seconds
-    setTimeout(() => {
-        popupContainer.classList.add('fade-out');
+        // Hide the notification after 5 seconds
         setTimeout(() => {
-            popupContainer.style.display = 'none';
-        }, 1000); // Match fade-out duration
-    }, 5000);
-}
+            popupContainer.classList.add('fade-out'); // Add fade-out class
+            popupContainer.classList.remove('show'); // Remove the show class
+
+            // Fully hide after animation completes
+            setTimeout(() => {
+                popupContainer.classList.remove('fade-out');
+            }, 500); // Match the duration of the fade-out transition
+        }, 5000);
+    }
 
     function scheduleNotifications() {
         showNotification();
-        const delay = Math.floor(Math.random() * (15000 - 6000 + 1)) + 6000; // Random delay between 6 and 15 seconds
+        const delay = Math.floor(Math.random() * (10000 - 3000 + 1)) + 3000; // Random delay between 3 and 10 seconds
         setTimeout(scheduleNotifications, delay);
     }
 
