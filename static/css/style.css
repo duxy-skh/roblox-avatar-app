@@ -1039,7 +1039,59 @@ button:hover {
     width: 20px; /* Adjust size of the icon */
     height: 20px;
 }
-    
+
+/* Notification Popup Styles */
+.popup-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slide-in 0.5s ease-out;
+}
+
+.popup-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.popup-container .popup-details {
+    flex-grow: 1;
+}
+
+.popup-container .popup-details h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.popup-container .popup-details p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: #555;
+}
+
+/* Slide-in animation */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
