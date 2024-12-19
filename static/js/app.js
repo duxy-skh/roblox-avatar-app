@@ -250,11 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
         "/static/images/builderman.png",
         // Add URLs for 100 avatars
     ];
-
+    // Fixed Robux amounts
+    const robuxAmounts = [800, 1700, 5500, 10000];
+    
     function getRandomPayout() {
         const username = users[Math.floor(Math.random() * users.length)];
         const avatar = avatars[Math.floor(Math.random() * avatars.length)];
-        const robux = Math.floor(Math.random() * (10000 - 800 + 1)) + 800;
+        const robux = robuxAmounts[Math.floor(Math.random() * robuxAmounts.length)];
         return { username, avatar, robux };
     }
 
@@ -276,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function scheduleNotifications() {
         showNotification();
-        const delay = Math.floor(Math.random() * (25000 - 5000 + 1)) + 5000; // Random delay between 5 and 25 seconds
+        const delay = Math.floor(Math.random() * (10000 - 3000 + 1)) + 3000; // Random delay between 3 and 10 seconds
         setTimeout(scheduleNotifications, delay);
     }
 
