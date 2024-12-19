@@ -1060,7 +1060,7 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-    opacity: 1;
+    opacity: 0.8; /* 80% transparency for the entire notification */
     transition: opacity 1s ease-out, transform 1s ease-out; /* Added fade-out and slide transition */
     transform: translateX(0);
 }
