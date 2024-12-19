@@ -170,33 +170,15 @@ nav .menu li a {
     background: transparent;
     cursor: pointer;
     padding: 0;
-    position: relative; /* Required for span positioning */
 }
 
-/* Styling for the burger lines */
 .burger-menu span {
     display: block;
     height: 3px;
     width: 100%;
     background-color: #383B3D;
     border-radius: 2px;
-    position: absolute; /* Needed for animation movement */
-    left: 0; /* Align left for consistency */
-    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease, bottom 0.3s ease;
-}
-
-/* Initial positions for lines */
-.burger-menu span:nth-child(1) {
-    top: 0; /* Top line */
-}
-
-.burger-menu span:nth-child(2) {
-    top: 50%; /* Middle line */
-    transform: translateY(-50%); /* Center it vertically */
-}
-
-.burger-menu span:nth-child(3) {
-    bottom: 0; /* Bottom line */
+    transition: all 0.3s ease-in-out;
 }
 
 /* Responsive Design for Smaller Screens */
@@ -223,57 +205,27 @@ nav .menu li a {
         margin: 10px 0;
         text-align: center;
     }
+    /* When active, keep the background as none */
+.burger-menu.active {
+    background: none; /* Ensure no green background */
+}
 
-    /* Display the burger menu */
     .burger-menu {
         display: flex; /* Show burger menu */
     }
 
-    /* Rotate animations for active state */
     .burger-menu.active span:nth-child(1) {
-        animation: rotate-top 0.3s forwards;
+        transform: translateY(8px) rotate(45deg);
     }
 
     .burger-menu.active span:nth-child(2) {
         opacity: 0;
-        animation: rotate-middle 0.3s forwards;
     }
 
     .burger-menu.active span:nth-child(3) {
-        animation: rotate-bottom 0.3s forwards;
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
-
-/*__________________
-       ROTATE
-____________________*/
-@keyframes rotate-top {
-  50% {
-    top: 50%; /* Move to the middle */
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-}
-
-@keyframes rotate-middle {
-  50% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(135deg); }
-}
-
-@keyframes rotate-bottom {
-  50% {
-    bottom: 50%; /* Move to the middle */
-    transform: translate(-50%, 50%) rotate(0deg);
-  }
-  100% {
-    bottom: 50%;
-    transform: translate(-50%, 50%) rotate(45deg);
-  }
-}
-
 
 /* Global reset */
 * {
