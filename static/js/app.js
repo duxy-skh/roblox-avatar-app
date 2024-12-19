@@ -270,10 +270,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         popupContainer.style.display = 'flex';
+        popupContainer.classList.remove('fade-out'); // Ensure fade-out is reset
 
+        // Hide notification with fade-out after 5 seconds
         setTimeout(() => {
-            popupContainer.style.display = 'none';
-        }, 5000); // Hide notification after 5 seconds
+            popupContainer.classList.add('fade-out'); // Trigger fade-out transition
+            setTimeout(() => {
+                popupContainer.style.display = 'none'; // Fully hide after transition
+            }, 1000); // Match the duration of the CSS transition
+        }, 5000);
     }
 
     function scheduleNotifications() {
