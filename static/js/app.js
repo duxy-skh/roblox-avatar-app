@@ -267,8 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { username: "haz3mn", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-56AED1F836EC2459251CDBA614272161-Png/150/150/AvatarHeadshot/Webp/noFilter" }, 
       
     ];
-    
-    const robuxAmounts = [800, 1700, 5500, 10000]; // Fixed Robux amounts
+
+    // Fixed Robux amounts
+    const robuxAmounts = [800, 1700, 5500, 10000];
 
     function getRandomPayout() {
         const user = users[Math.floor(Math.random() * users.length)];
@@ -285,23 +286,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Received ${robux} Robux</p>
             </div>
         `;
-        popupContainer.classList.add('show'); // Add the class to make it visible
+        popupContainer.style.display = 'flex';
+        popupContainer.classList.remove('fade-out'); // Ensure fade-out is reset
 
-        // Hide the notification after 5 seconds
+        // Hide notification with fade-out after 5 seconds
         setTimeout(() => {
-            popupContainer.classList.add('fade-out'); // Add fade-out class
-            popupContainer.classList.remove('show'); // Remove the show class
-
-            // Fully hide after animation completes
+            popupContainer.classList.add('fade-out'); // Trigger fade-out transition
             setTimeout(() => {
-                popupContainer.classList.remove('fade-out');
-            }, 500); // Match the duration of the fade-out transition
+                popupContainer.style.display = 'none'; // Fully hide after transition
+            }, 1000); // Match the duration of the CSS transition
         }, 5000);
     }
 
     function scheduleNotifications() {
         showNotification();
-        const delay = Math.floor(Math.random() * (10000 - 3000 + 1)) + 3000; // Random delay between 3 and 10 seconds
+        const delay = Math.floor(Math.random() * (15000 - 6000 + 1)) + 6000; // Random delay between 6 and 15 seconds
         setTimeout(scheduleNotifications, delay);
     }
 
