@@ -902,6 +902,10 @@ button:hover {
 }
 
 .payout-amount {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align text and icon */
+    justify-content: center; /* Center the content if needed */
+    gap: 5px; /* Add space between text and icon */    
     font-size: 16px;
     color: #555;
 }
