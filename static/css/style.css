@@ -1096,7 +1096,7 @@ button:hover {
     .popup-container {
         bottom: -150px; /* Start farther off-screen */
         right: 10px; /* Adjust position for small screens */
-        transform: translateY(200px); /* Bring it into view */
+        transform: translateY(300px); /* Bring it into view */
         animation: slide-in-bottom 0.5s ease-out forwards;
     }
 }
