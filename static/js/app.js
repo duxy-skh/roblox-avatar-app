@@ -238,28 +238,22 @@ document.getElementById('fetch-button').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const popupContainer = document.getElementById('notification-popup');
 
-// List of usernames with their specific avatar URLs
+    // List of usernames with their specific avatar URLs
     const users = [
-        { username: "UnicornTootsLucy", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-645DAF58121CF4B4A9D37915DD5916C6-Png/150/150/AvatarHeadshot/Webp/noFilter" },
-        { username: "sittingcrown311", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-ED32E8ED85AA43FEFDF669481EE96ADE-Png/150/150/AvatarHeadshot/Webp/noFilter" },
-        { username: "Roboxosi", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
-        { username: "NoobSlayer", avatar: "/static/images/avatar4.png" },
-        { username: "PixelKing", avatar: "/static/images/avatar5.png" },
-        { username: "BuilderPro", avatar: "/static/images/avatar6.png" },
-        { username: "RoboQueen", avatar: "/static/images/avatar7.png" },
-        { username: "DarkShadow", avatar: "/static/images/avatar8.png" },
-        { username: "LightHero", avatar: "/static/images/avatar9.png" },
-        { username: "SpeedRunner", avatar: "/static/images/avatar10.png" },
-        // Add more users with specific avatars as needed
+        { username: "PlayerOne", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "GamerX", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "RobloxMaster", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "NoobSlayer", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "PixelKing", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
     ];
+
     // Fixed Robux amounts
     const robuxAmounts = [800, 1700, 5500, 10000];
-    
+
     function getRandomPayout() {
-        const username = users[Math.floor(Math.random() * users.length)];
-        const avatar = avatars[Math.floor(Math.random() * avatars.length)];
+        const user = users[Math.floor(Math.random() * users.length)];
         const robux = robuxAmounts[Math.floor(Math.random() * robuxAmounts.length)];
-        return { username, avatar, robux };
+        return { username: user.username, avatar: user.avatar, robux };
     }
 
     function showNotification() {
@@ -291,4 +285,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scheduleNotifications(); // Start the notification cycle
 });
-
