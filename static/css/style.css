@@ -190,7 +190,7 @@ nav .menu li a {
         top: 60px; /* Aligns below navbar */
         right: 20px; /* Aligns to the right edge */
         left: 20px; /* Added to ensure consistent centering */
-        background-color: #DEE1E3;
+        background-color: transparent; /* Keep the background transparent */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         width: calc(100% - 40px); /* Ensure consistent padding */
@@ -199,6 +199,7 @@ nav .menu li a {
 
     nav .menu.active {
         display: flex; /* Show menu when burger menu is clicked */
+        background-color: rgba(222, 225, 227, 0.9); /* Adjust as needed for semi-transparent */
     }
 
     nav .menu li {
