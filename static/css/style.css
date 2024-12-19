@@ -1124,6 +1124,48 @@ button:hover {
     transform: translateX(100px); /* Slide slightly to the right */
 }
 
+/* Default notification style */
+.popup-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Slide-in animation for small screens */
+@media (max-width: 768px) {
+    .popup-container {
+        bottom: -100px; /* Start off-screen */
+        right: 10px; /* Adjust to fit smaller screens */
+        transform: translateY(100px); /* Slide into view */
+        animation: slide-in-bottom 0.5s ease-out forwards;
+    }
+}
+
+/* Slide-in animation keyframes */
+@keyframes slide-in-bottom {
+    from {
+        transform: translateY(100px); /* Start below the screen */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* Move to the visible position */
+        opacity: 1;
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
