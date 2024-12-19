@@ -1064,15 +1064,17 @@ button:hover {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
+/* Avatar Style */
 .popup-container img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid #007bff; /* Add a blue border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    margin-right: 10px; /* Add space between the avatar and text */
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 10px;
 }
 
+/* Popup details */
 .popup-container .popup-details {
     flex-grow: 1;
 }
@@ -1092,9 +1094,9 @@ button:hover {
 /* Slide-in animation for small screens */
 @media (max-width: 768px) {
     .popup-container {
-        bottom: -100px; /* Start off-screen */
-        right: 10px; /* Adjust to fit smaller screens */
-        transform: translateY(100px); /* Slide into view */
+        bottom: -150px; /* Start farther off-screen */
+        right: 10px; /* Adjust position for small screens */
+        transform: translateY(200px); /* Bring it into view */
         animation: slide-in-bottom 0.5s ease-out forwards;
     }
 }
@@ -1102,11 +1104,11 @@ button:hover {
 /* Slide-in animation keyframes */
 @keyframes slide-in-bottom {
     from {
-        transform: translateY(100px); /* Start below the screen */
+        transform: translateY(200px); /* Start well below the screen */
         opacity: 0;
     }
     to {
-        transform: translateY(0); /* Move to the visible position */
+        transform: translateY(0); /* Bring it to its visible position */
         opacity: 1;
     }
 }
@@ -1114,7 +1116,7 @@ button:hover {
 /* Notification Popup Fade-Out Transition */
 .popup-container.fade-out {
     opacity: 0;
-    transform: translateX(100px); /* Slide slightly to the right */
+    transform: translateX(100px); /* Slide slightly to the right while fading out */
 }
 
 
