@@ -140,11 +140,11 @@ nextButton.addEventListener('click', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const burgerMenu = document.getElementById('burger-menu');
-    const navMenu = document.getElementById('nav-menu');
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navMenu = document.querySelector('nav .menu');
 
-    burgerMenu.addEventListener('click', () => {
+    burgerMenu.addEventListener('click', function () {
         burgerMenu.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
