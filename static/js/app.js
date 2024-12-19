@@ -147,6 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerMenu.addEventListener('click', () => {
         burgerMenu.classList.toggle('active');
         navMenu.classList.toggle('active');
+        
+    // Ensure background remains transparent on close
+    if (!burgerMenu.classList.contains('active')) {
+        navMenu.style.backgroundColor = 'transparent';
+    }
     });
 });
 
