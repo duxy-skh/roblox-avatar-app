@@ -1092,6 +1092,31 @@ button:hover {
     }
 }
 
+/* Notification Popup Fade Out Transition */
+.popup-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 1;
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Added fade-out and slide transition */
+    transform: translateX(0);
+}
+
+.popup-container.fade-out {
+    opacity: 0;
+    transform: translateX(100px); /* Slide slightly to the right */
+}
+
 /* Footer */
 footer {
     text-align: center;
