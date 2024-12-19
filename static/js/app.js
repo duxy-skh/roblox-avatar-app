@@ -277,26 +277,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return { username: user.username, avatar: user.avatar, robux };
     }
 
-    function showNotification() {
-        const { username, avatar, robux } = getRandomPayout();
-        popupContainer.innerHTML = `
-            <img src="${avatar}" alt="${username} Avatar">
-            <div class="popup-details">
-                <h4>${username}</h4>
-                <p>Received ${robux} Robux</p>
-            </div>
-        `;
-        popupContainer.style.display = 'flex';
-        popupContainer.classList.remove('fade-out'); // Ensure fade-out is reset
+function showNotification() {
+    const { username, avatar, robux } = getRandomPayout();
+    popupContainer.innerHTML = `
+        <img src="${avatar}" alt="${username} Avatar">
+        <div class="popup-details">
+            <h4>${username}</h4>
+            <p>Received ${robux} Robux</p>
+        </div>
+    `;
+    popupContainer.style.display = 'flex';
+    popupContainer.classList.remove('fade-out'); // Reset fade-out
 
-        // Hide notification with fade-out after 5 seconds
+    // Hide notification after 5 seconds
+    setTimeout(() => {
+        popupContainer.classList.add('fade-out');
         setTimeout(() => {
-            popupContainer.classList.add('fade-out'); // Trigger fade-out transition
-            setTimeout(() => {
-                popupContainer.style.display = 'none'; // Fully hide after transition
-            }, 1000); // Match the duration of the CSS transition
-        }, 5000);
-    }
+            popupContainer.style.display = 'none';
+        }, 1000); // Match fade-out duration
+    }, 5000);
+}
 
     function scheduleNotifications() {
         showNotification();
