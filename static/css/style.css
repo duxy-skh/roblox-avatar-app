@@ -1047,7 +1047,7 @@ button:hover {
 /* Default notification style */
 .popup-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 0; /* Place the notification off-screen initially */
     right: 20px;
     z-index: 1000;
     background-color: #fff;
@@ -1059,12 +1059,12 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    opacity: 0; /* Start hidden */
+    transform: translateY(100%); /* Completely below the screen */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* Avatar Style */
+/* Avatar style */
 .popup-container img {
     width: 50px;
     height: 50px;
@@ -1091,34 +1091,18 @@ button:hover {
     color: #555;
 }
 
-/* Slide-in animation for small screens */
-@media (max-width: 768px) {
-    .popup-container {
-        bottom: -150px; /* Start farther off-screen */
-        right: 10px; /* Adjust position for small screens */
-        transform: translateY(300px); /* Bring it into view */
-        animation: slide-in-bottom 0.5s ease-out forwards;
-    }
+/* Slide-in animation for all screens */
+.popup-container.show {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move into its final position */
 }
 
-/* Slide-in animation keyframes */
-@keyframes slide-in-bottom {
-    from {
-        transform: translateY(200px); /* Start well below the screen */
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0); /* Bring it to its visible position */
-        opacity: 1;
-    }
-}
-
-/* Notification Popup Fade-Out Transition */
+/* Fade-out animation */
 .popup-container.fade-out {
     opacity: 0;
-    transform: translateX(100px); /* Slide slightly to the right while fading out */
+    transform: translateY(100%); /* Slide back below the screen */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
 
 /* Footer */
 footer {
