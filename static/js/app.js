@@ -240,11 +240,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // List of usernames with their specific avatar URLs
     const users = [
-        { username: "PlayerOne", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
-        { username: "GamerX", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
-        { username: "RobloxMaster", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
-        { username: "NoobSlayer", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
-        { username: "PixelKing", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Roboxosi", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "UnicornTootsLucy", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-645DAF58121CF4B4A9D37915DD5916C6-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "sittingcrown311", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-ED32E8ED85AA43FEFDF669481EE96ADE-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "nerodevilmaycry5new", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B2D680766499E8B3F86C6075CF523239-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "number1gg4", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-EDDD8B466C2B77692DE81618AC52E453-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "BriBri_8621", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-CECD2BF9E5FA841EF888A0EC3E1A530D-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "@Folly_Gent2014", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-9FD7AC78E939F36FEE00B4FB80803A1F-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "hanmakun099", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-2A996AE5B5E704A03F3C9DBE908A5A4A-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "JeremyAwesomeBest", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-0204F59D1F1A69E8E6905036366CCD85-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Benthedog57", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-27DA477B7115277D29A4887D8E19C1D8-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Nic0_24o", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-E40BC03588C0D09C98B853506E23B173-Png/150/150/AvatarHeadshot/Webp/noFilter" },     
+        { username: "anrowann", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-827A722143B0C239B24259ED7030B01D-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Alek0866", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-79491062D2D89B84EC7A69876EB4879D-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Jay03136", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-C4A8C6501BA3339D63FB7689D5970FA7-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Sonicsplat_790", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-E87B8D8605F8DB4C76F9915A8FD5BD9A-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "qwertttzyyy2426", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20BDE4DFD0A6A477021820F4C08DB072-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "kitsuneprapra0912", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-5A84BA24CA27E95D831946D81E8058D2-Png/150/150/AvatarHeadshot/Webp/noFilter" },    
+        { username: "Mybrothergod1", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-74F8A6A524D31EB1018EF46E68FCF378-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "VAlentinatoby20", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-2030E771191BD4A32A3A8F0376202DDF-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "carterffg6", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-88675650C85F2A10163F450A7D9A1748-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "AlexAlexSthlm11", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-2FD29F98B4A3C2AC9D4E4C57B51DE313-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Lilibeca2018", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-48FE42AC6E10DBCA90108FFA5BA93D75-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "CARLOS123PROBINEOS1", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-96F09DE4379C3DD6A0ED3F283680B4D8-Png/150/150/AvatarHeadshot/Webp/noFilter" },   
+        { username: "KreekCraft", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F31F664D33E6B9E9D0CA303E346F1304-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "haz3mn", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-56AED1F836EC2459251CDBA614272161-Png/150/150/AvatarHeadshot/Webp/noFilter" }, 
+      
     ];
 
     // Fixed Robux amounts
