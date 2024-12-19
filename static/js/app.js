@@ -141,11 +141,16 @@ nextButton.addEventListener('click', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Select burger menu and navigation menu
     const burgerMenu = document.querySelector('.burger-menu');
     const navMenu = document.querySelector('nav .menu');
 
+    // Add click event listener to toggle active states
     burgerMenu.addEventListener('click', function () {
+        // Toggle the "active" class for the burger menu
         burgerMenu.classList.toggle('active');
+
+        // Toggle the "active" class for the navigation menu (for responsive design)
         navMenu.classList.toggle('active');
     });
 });
