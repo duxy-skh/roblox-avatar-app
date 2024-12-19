@@ -1048,7 +1048,7 @@ button:hover {
 /* Notification Popup Fade Out Transition */
 .popup-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 50px; /* Keep it above the footer */
     right: 20px;
     z-index: 1000;
     background-color: #fff;
