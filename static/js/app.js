@@ -238,17 +238,19 @@ document.getElementById('fetch-button').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const popupContainer = document.getElementById('notification-popup');
 
+// List of usernames with their specific avatar URLs
     const users = [
-        "PlayerOne", "GamerX", "RobloxMaster", "NoobSlayer", "PixelKing",
-        "BuilderPro", "RoboQueen", "DarkShadow", "LightHero", "SpeedRunner",
-        // Add up to 100 random usernames here
-    ];
-
-    const avatars = [
-        "/static/images/RealKreek.png", // Replace with actual avatar URLs
-        "/static/images/Stickmasterluke.png",
-        "/static/images/builderman.png",
-        // Add URLs for 100 avatars
+        { username: "UnicornTootsLucy", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-645DAF58121CF4B4A9D37915DD5916C6-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "sittingcrown311", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-ED32E8ED85AA43FEFDF669481EE96ADE-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "Roboxosi", avatar: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-20A47D24C42C97F4856A28F4BE68097B-Png/150/150/AvatarHeadshot/Webp/noFilter" },
+        { username: "NoobSlayer", avatar: "/static/images/avatar4.png" },
+        { username: "PixelKing", avatar: "/static/images/avatar5.png" },
+        { username: "BuilderPro", avatar: "/static/images/avatar6.png" },
+        { username: "RoboQueen", avatar: "/static/images/avatar7.png" },
+        { username: "DarkShadow", avatar: "/static/images/avatar8.png" },
+        { username: "LightHero", avatar: "/static/images/avatar9.png" },
+        { username: "SpeedRunner", avatar: "/static/images/avatar10.png" },
+        // Add more users with specific avatars as needed
     ];
     // Fixed Robux amounts
     const robuxAmounts = [800, 1700, 5500, 10000];
