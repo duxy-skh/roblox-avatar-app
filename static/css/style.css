@@ -76,6 +76,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 /* Navigation Bar */
@@ -1108,11 +1109,11 @@ button:hover {
 
 /* Footer */
 footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #DEE1E3;
     text-align: center;
     padding: 10px 0;
-    background-color: #DEE1E3;
     border-top: 1px solid #E0E0E0;
-    margin-top: 20px;
     width: 100%;
 }
 
