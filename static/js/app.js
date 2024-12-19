@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function scheduleNotifications() {
         showNotification();
-        const delay = Math.floor(Math.random() * (10000 - 3000 + 1)) + 3000; // Random delay between 3 and 10 seconds
+        const delay = Math.floor(Math.random() * (15000 - 6000 + 1)) + 6000; // Random delay between 6 and 15 seconds
         setTimeout(scheduleNotifications, delay);
     }
 
