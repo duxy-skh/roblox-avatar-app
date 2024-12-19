@@ -101,7 +101,9 @@ nav .menu li a::before,
 nav .menu li a::after {
     content: ""; /* Empty content for the pseudo-elements */
     position: absolute;
-    bottom: -3px; /* Position below the text */
+    bottom: -10px; /* Position below the text */
+    left: -5px; /* Extend a few pixels to the left */
+    right: -5px; /* Extend a few pixels to the right */
     height: 2px; /* Thickness of the underline */
     background-color: #383B3D; /* Match the text color */
     width: 0; /* Start with no width */
@@ -119,7 +121,7 @@ nav .menu li a::after {
 /* Hover effect to grow the underline */
 nav .menu li a:hover::before,
 nav .menu li a:hover::after {
-    width: 50%; /* Expand to 50% of the text on both sides */
+    width: calc(100% + 10px); /* Extend the underline width */
 }
 
 
